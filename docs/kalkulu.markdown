@@ -22,15 +22,17 @@ The `OUT` register is read-only and stores the output of non-destructive command
 
 ## Opcodes/operands and what they do
 
-    | Opcode | Operand         | Expression         |
-    =================================================
-    | 0000   | nop             | N/A                |
-    | 0001   | hlt             | N/A                |
-    | 0010   | movr REG1, REG2 | REG1 = REG2        |
-    | 0011   | movv REG1, VAL  | REG1 = VAL         |
-    | 0100   | inc  REG1       | REG1 = REG1 + 1    |
-    | 0101   | dec  REG1       | REG1 = REG1 - 1    |
-    | 0110   | addr REG1, REG2 | OUT  = REG1 + REG2 |
-    | 0111   | addv REG1, VAL  | OUT  = REG1 + VAL  |
-    | 1000   | subr REG1, REG2 | OUT  = REG1 - REG2 |
-    | 1001   | subv REG1, VAL  | OUT  = REG1 - VAL  |
+    | Opcode | Operand         | Expression            |
+    ====================================================
+    | 0000   | nop             | N/A                   |
+    | 0001   | hlt             | N/A                   |
+    | 0010   | movr REG1, REG2 | REG1 = REG2           |
+    | 0011   | movv REG1, VAL  | REG1 = VAL            |
+    | 0100   | inc  REG1       | REG1 = REG1 + 1       |
+    | 0101   | dec  REG1       | REG1 = REG1 - 1       |
+    | 0110   | addr REG1, REG2 | OUT  = REG1 + REG2    |
+    | 0111   | addv REG1, VAL  | OUT  = REG1 + VAL     |
+    | 1000   | subr REG1, REG2 | OUT  = REG1 - REG2    |
+    | 1001   | subv REG1, VAL  | OUT  = REG1 - VAL     |
+    | 1010   | cmpr REG1, REG2 | OUT  = (REG1 == REG2) |
+    | 1011   | cmpv REG1, VAL  | OUT  = (REG1 == VAL)  |
