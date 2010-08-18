@@ -20,14 +20,6 @@ For each command it does the following:
 
 The `OUT` register is read-only and stores the output of non-destructive commands (math, such as addition and subtraction).
 
-## Hardware design
-
-There are 3 multiplexers sending input to the modules, for `CMD`, `IN1`, `IN2`.
-
-There is one multiplexer which connects to the same module's `OUT` lead.
-
-Each connection on the multiplexer goes to individual modules -- each has three inputs and one output -- `CMD`, `IN1`, `IN2`, and `OUT` respectively.
-
 ## Opcodes/operands and what they do
 
     | Opcode | Operand         | Expression         |
