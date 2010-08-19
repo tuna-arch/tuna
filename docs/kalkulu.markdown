@@ -22,17 +22,17 @@ The `OUT` register is read-only and stores the output of non-destructive command
 
 ## Opcodes/operands and what they do
 
-    | Opcode | Operand         | Expression            |
-    ====================================================
-    | 0000   | nop             | N/A                   |
-    | 0001   | hlt             | N/A                   |
-    | 0010   | movr REG1, REG2 | REG1 = REG2           |
-    | 0011   | movv REG1, VAL  | REG1 = VAL            |
-    | 0011   | addr REG1, REG2 | OUT  = REG1 + REG2    |
-    | 0100   | addv REG1, VAL  | OUT  = REG1 + VAL     |
-    | 0101   | subr REG1, REG2 | OUT  = REG1 - REG2    |
-    | 0110   | subv REG1, VAL  | OUT  = REG1 - VAL     |
-    | 0111   | cmpr REG1, REG2 | OUT  = (REG1 == REG2) |
-    | 1000   | cmpv REG1, VAL  | OUT  = (REG1 == VAL)  |
-    | 1001   | jmp  REG1       | N/A                   |
-    | 1010   | jz   REG1       | jmp if OUT == 0       |
+    | Opcode | Operand         | Expression              |
+    ======================================================
+    | 0000   | movr REG1, REG2 | REG1 = REG2             |
+    | 0001   | movv REG1, VAL  | REG1 = VAL              |
+    | 0010   | add  REG1, REG2 | OUT  = REG1 + REG2      |
+    | 0011   | and  REG1, REG2 | OUT  = REG1 and REG2    |
+    | 0100   | or   REG1, REG2 | OUT  = REG1 or  REG2    |
+    | 0101   | xor  REG1, REG2 | OUT  = REG1 xor REG2    |
+    | 0110   | in   REG1, PORT | REG1 = PORT (i/o ports) |
+    | 0111   | out  PORT, REG1 | PORT = REG1 (i/o ports) |
+    | 1000   | jmp  REG1       | N/A                     |
+    | 1001   | jz   REG1       | jmp if OUT == 0         |
+    | 1010   | ls   REG1, VAL  | REG1 = REG1 << VAL      |
+    | 1011   | rs   REG1, VAL  | REG1 = REG1 >> VAL      |
