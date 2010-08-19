@@ -35,5 +35,4 @@ The `OUT` register is read-only and stores the output of non-destructive command
     | 0111   | cmpr REG1, REG2 | OUT  = (REG1 == REG2) |
     | 1000   | cmpv REG1, VAL  | OUT  = (REG1 == VAL)  |
     | 1001   | jmp  REG1       | N/A                   |
-    | 1010   | jo   REG1       | jmp if OUT == 1       |
-    | 1011   | jz   REG1       | jmp if OUT == 0       |
+    | 1010   | jz   REG1       | jmp if OUT == 0       |
