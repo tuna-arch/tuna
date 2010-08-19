@@ -28,14 +28,12 @@ The `OUT` register is read-only and stores the output of non-destructive command
     | 0001   | hlt             | N/A                   |
     | 0010   | movr REG1, REG2 | REG1 = REG2           |
     | 0011   | movv REG1, VAL  | REG1 = VAL            |
-    | 0100   | inc  REG1       | REG1 = REG1 + 1       |
-    | 0101   | dec  REG1       | REG1 = REG1 - 1       |
-    | 0110   | addr REG1, REG2 | OUT  = REG1 + REG2    |
-    | 0111   | addv REG1, VAL  | OUT  = REG1 + VAL     |
-    | 1000   | subr REG1, REG2 | OUT  = REG1 - REG2    |
-    | 1001   | subv REG1, VAL  | OUT  = REG1 - VAL     |
-    | 1010   | cmpr REG1, REG2 | OUT  = (REG1 == REG2) |
-    | 1011   | cmpv REG1, VAL  | OUT  = (REG1 == VAL)  |
-    | 1100   | jmp  REG1       | N/A                   |
-    | 1101   | jo   REG1       | jmp if OUT == 1       |
-    | 1110   | jz   REG1       | jmp if OUT == 0       |
+    | 0011   | addr REG1, REG2 | OUT  = REG1 + REG2    |
+    | 0100   | addv REG1, VAL  | OUT  = REG1 + VAL     |
+    | 0101   | subr REG1, REG2 | OUT  = REG1 - REG2    |
+    | 0110   | subv REG1, VAL  | OUT  = REG1 - VAL     |
+    | 0111   | cmpr REG1, REG2 | OUT  = (REG1 == REG2) |
+    | 1000   | cmpv REG1, VAL  | OUT  = (REG1 == VAL)  |
+    | 1001   | jmp  REG1       | N/A                   |
+    | 1010   | jo   REG1       | jmp if OUT == 1       |
+    | 1011   | jz   REG1       | jmp if OUT == 0       |
