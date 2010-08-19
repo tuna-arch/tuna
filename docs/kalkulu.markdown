@@ -4,7 +4,7 @@
 
 There is one output register, `OUT`, which is used for output of non-destructive operations (addition and subtract, for instance).
 
-There can be up to 14 general-purpose registers addressed by one 4-bit byte (0000 is `OUT`, 0001 - 1111 are `r1` through `r14`).
+There can be up to 14 general-purpose registers addressed by one 4-bit byte (0000 is `OUT`, 0001 - 1111 are `r1` through `r15`).
 
 The first implementation will likely have between 2 and 4.
 
