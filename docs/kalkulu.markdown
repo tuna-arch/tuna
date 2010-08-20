@@ -34,5 +34,5 @@ The `OUT` register is read-only and stores the output of non-destructive command
     | 0111   | out  PORT, REG1 | PORT = REG1 (i/o ports) |
     | 1000   | jmp  REG1       | N/A                     |
     | 1001   | jz   REG1       | jmp if OUT == 0         |
-    | 1010   | ls   REG1, VAL  | REG1 = REG1 << VAL      |
-    | 1011   | rs   REG1, VAL  | REG1 = REG1 >> VAL      |
+    | 1010   | shl  REG1, VAL  | OUT  = REG1 << VAL      |
+    | 1011   | shr  REG1, VAL  | OUT  = REG1 >> VAL      |
