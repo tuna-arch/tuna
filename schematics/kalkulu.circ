@@ -418,6 +418,12 @@
       <a name="labelloc" val="west" />
       <a name="labelfont" val="SansSerif plain 12" />
     </comp>
+    <comp lib="0" name="Text" loc="(156,330)">
+      <a name="text" val="Decoder Module" />
+      <a name="font" val="SansSerif plain 12" />
+      <a name="halign" val="center" />
+      <a name="valign" val="base" />
+    </comp>
     <comp lib="0" name="Text" loc="(151,918)">
       <a name="text" val="IN1" />
       <a name="font" val="SansSerif plain 12" />
@@ -480,6 +486,12 @@
       <a name="labelloc" val="west" />
       <a name="labelfont" val="SansSerif plain 12" />
     </comp>
+    <comp lib="0" name="Text" loc="(185,358)">
+      <a name="text" val="" />
+      <a name="font" val="SansSerif plain 12" />
+      <a name="halign" val="center" />
+      <a name="valign" val="base" />
+    </comp>
     <comp lib="0" name="Pin" loc="(140,980)">
       <a name="facing" val="east" />
       <a name="output" val="false" />
@@ -492,6 +504,12 @@
     </comp>
     <comp name="quad pulse-triggered D flip-flop" loc="(200,1160)">
       <a name="facing" val="east" />
+    </comp>
+    <comp lib="0" name="Text" loc="(189,352)">
+      <a name="text" val="-&gt; 0000" />
+      <a name="font" val="SansSerif plain 12" />
+      <a name="halign" val="center" />
+      <a name="valign" val="base" />
     </comp>
     <comp name="quad pulse-triggered D flip-flop" loc="(200,980)">
       <a name="facing" val="east" />
@@ -516,6 +534,12 @@
       <a name="label" val="" />
       <a name="labelloc" val="west" />
       <a name="labelfont" val="SansSerif plain 12" />
+    </comp>
+    <comp lib="0" name="Text" loc="(185,545)">
+      <a name="text" val="-&gt; 1111" />
+      <a name="font" val="SansSerif plain 12" />
+      <a name="halign" val="center" />
+      <a name="valign" val="base" />
     </comp>
   </circuit>
   <circuit name="gated D-latch">
