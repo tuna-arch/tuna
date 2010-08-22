@@ -18,7 +18,13 @@ For each command it does the following:
 3. Read the next four bits from memory into `IN2`
 4. Raise the `SEND` lead, which tells the system to send the values from `CMD`, `IN1`, `IN2` to the corresponding multiplexers.
 
-The `OUT` register is read-only and stores the output of non-destructive commands (math, such as addition and subtraction).
+The `OUT` register stores the output of non-destructive commands (math, such as addition and subtraction).
+`OUT` can be written to, ie:
+
+    movv OUT, 0
+    jz 0x1000
+
+would jump to 0x100, because `OUT` is 0
 
 ## Opcodes/operands and what they do
 
