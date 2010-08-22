@@ -42,3 +42,6 @@ would jump to 0x100, because `OUT` is 0
     | 1001   | jz   REG1       | jmp if OUT == 0         |
     | 1010   | shl  REG1, VAL  | OUT  = REG1 << VAL      |
     | 1011   | shr  REG1, VAL  | OUT  = REG1 >> VAL      |
+    | 1100   | lt   REG1, REG2 | OUT  = REG1 < REG2      |
+    | 1101   | gt   REG1, REG2 | OUT  = REG1 > REG2      |
+    | 1110   | eq   REG1, REG2 | OUT  = REG1 == REG2     |
