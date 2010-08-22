@@ -24,7 +24,7 @@ The `OUT` register stores the output of non-destructive commands (math, such as 
     movv OUT, 0
     jz 0x1000
 
-would jump to 0x100, because `OUT` is 0
+would jump to 0x1000, because `OUT` is 0
 
 ## Opcodes/operands and what they do
 
