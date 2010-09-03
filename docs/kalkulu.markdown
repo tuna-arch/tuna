@@ -4,7 +4,7 @@
 
 There is one output register, `OUT`, which is used for output of non-destructive operations (addition and subtract, for instance).
 
-There can be up to 14 general-purpose registers addressed by one 4-bit byte (0000 is `OUT`, 0001 - 1111 are `r1` through `r15`).
+There can be up to 14 general-purpose registers addressed by one nibble (0000 is `OUT`, 0001 - 1111 are `r1` through `r15`).
 
 The first implementation will likely have between 2 and 4.
 
@@ -18,7 +18,13 @@ For each command it does the following:
 3. Read the next four bits from memory into `IN2`
 4. Raise the `SEND` lead, which tells the system to send the values from `CMD`, `IN1`, `IN2` to the corresponding multiplexers.
 
-The `OUT` register is read-only and stores the output of non-destructive commands (math, such as addition and subtraction).
+The `OUT` register stores the output of non-destructive commands (math, such as addition and subtraction).
+`OUT` can be written to, ie:
+
+    movv OUT, 0
+    jz 0x1000
+
+would jump to 0x1000, because `OUT` is 0
 
 ## Opcodes/operands and what they do
 
@@ -32,7 +38,10 @@ The `OUT` register is read-only and stores the output of non-destructive command
     | 0101   | xor  REG1, REG2 | OUT  = REG1 xor REG2    |
     | 0110   | in   REG1, PORT | REG1 = PORT (i/o ports) |
     | 0111   | out  PORT, REG1 | PORT = REG1 (i/o ports) |
-    | 1000   | jmp  REG1       | N/A                     |
+    | 1000   | jmp  REG1       | goto REG1               |
     | 1001   | jz   REG1       | jmp if OUT == 0         |
     | 1010   | shl  REG1, VAL  | OUT  = REG1 << VAL      |
     | 1011   | shr  REG1, VAL  | OUT  = REG1 >> VAL      |
+    | 1100   | lt   REG1, REG2 | OUT  = REG1 < REG2      |
+    | 1101   | gt   REG1, REG2 | OUT  = REG1 > REG2      |
+    | 1110   | eq   REG1, REG2 | OUT  = REG1 == REG2     |
