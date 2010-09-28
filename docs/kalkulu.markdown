@@ -2,9 +2,11 @@
 
 ## Registers
 
-Register 0 is the flag register, `FLAG`, which is used for storing information of the last-ran operation.
-
-All other registers are free for use.
+- Register 0 is the flag register, `FLAG`, which is used for storing information of the last-ran operation.
+- Register 1 is the interrupt number register, `INTN`, which stores the interrupt number (if it's 0, there is no interrupt).
+- Register 2 is the interrupt handler register, `INTH`, which stores the location of the interrupt handler in memory (if it's 0, there is no handler, so the handler must have at least one bit from the start of memory).
+- Register 3 is the instruction pointer, `INST`, which stores the location of the current instruction in memory
+- All other registers are free for use.
 
 All commands are given two inputs - `IN1` and `IN2`, which are either registers or binary values depending on the command.
 The commands can ignore one or both of the inputs (ie, `jmp` and `jz` will only use one input).
@@ -58,5 +60,22 @@ The `FLAG` register stores information from the output of the last command:
     | 00011101   | ltv    REG1, VAL   | REG1 = REG1 < VAL                        |
     | 00011110   | gtr    REG1, REG2  | REG1 = REG1 > REG2                       |
     | 00011111   | gtv    REG1, VAL   | REG1 = REG1 > VAL                        |
-    | 00100000   | cmpr   REG1, REG2  | status flag = REG1 == REG2               |
-    | 00100001   | cmpv   REG1, VAL   | status flag = REG1 == VAL                |
+    | 00100000   | eqr    REG1, REG2  | status flag = REG1 == REG2               |
+    | 00100001   | eqv    REG1, VAL   | status flag = REG1 == VAL                |
+    | 11111111   | iret               | return from interrupt                    |
+
+## Interrupts
+
+A device, upon establishing communication with the processor, can request a port number.
+When the port number is given, it can send a interrupt request for that port number at any given time.
+When it does so, the processor will set `INTN` to the port number and trigger the interrupt handler (if `INTH` is not set to 0).
+
+You can use the `iret` instruction to leave the interrupt handler
+
+Example interrupt handler implementation:
+
+    int_handler:
+      out 0, INTN ; print interrupt number
+      iret        ; leave interrupt
+    
+    movv INTH, int_handler ; set interrupt handler
