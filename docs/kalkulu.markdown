@@ -1,4 +1,4 @@
-# Kalkulu: 4-bit processor design
+# Kalkulu: processor design
 
 ## Registers
 
