@@ -8,21 +8,22 @@
 - Register 3 is the instruction pointer, `INST`, which stores the location of the current instruction in memory
 - All other registers are free for use.
 
-All commands are given two inputs - `IN1` and `IN2`, which are either registers or binary values depending on the command.
-The commands can ignore one or both of the inputs (ie, `jmp` and `jz` will only use one input).
+All instructions are given two inputs - `IN1` and `IN2`, which are either registers or binary values depending on the instruction.
+The instructions can ignore one or both of the inputs (ie, `jmp` and `jz` will only use one input).
 
-For each command it does the following:
+For each instruction it does the following:
 
 1. Read the next byte from memory into `CMD`
 2. Read the next byte from memory into `IN1`
 3. Read the next byte from memory into `IN2`
 4. Raise the `SEND` lead, which tells the system to send the values from `CMD`, `IN1`, `IN2` to the corresponding multiplexers.
 
-The `FLAG` register stores information from the output of the last command:
-    | bit # | name   | value                                    |
-    ==================================================================
-    |   0   | status | 1 if command is successful, 0 otherwise  |
-    |   1   | carry  | 1 if carry required                      |
+The `FLAG` register stores information from the output of the last instruction:
+    | bit # | name   | value                                       |
+    ================================================================
+    |   0   | status | 1 if instruction is successful, 0 otherwise |
+    |   1   | carry  | 1 if carry required                         |
+    |   2   | zero   | 1 if last instruction equated to zero       |
 
 ## Opcodes/operands and what they do
 
@@ -54,8 +55,8 @@ The `FLAG` register stores information from the output of the last command:
     | 00010111   | shrv   REG1, VAL   | REG1 = REG1 >> VAL                       |
     | 00011000   | jmpr   REG1        | jump to value in REG1                    |
     | 00011001   | jmpv   VAL         | jump to VAL                              |
-    | 00011010   | jzr    REG1        | jmpr if status flag == 0                 |
-    | 00011011   | jzv    VAL         | jmpv if status flag == 0                 |
+    | 00011010   | jzr    REG1        | jmpr if zero flag == 0                   |
+    | 00011011   | jzv    VAL         | jmpv if zero flag == 0                   |
     | 00011100   | ltr    REG1, REG2  | REG1 = REG1 < REG2                       |
     | 00011101   | ltv    REG1, VAL   | REG1 = REG1 < VAL                        |
     | 00011110   | gtr    REG1, REG2  | REG1 = REG1 > REG2                       |
