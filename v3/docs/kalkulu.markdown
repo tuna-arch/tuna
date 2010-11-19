@@ -24,30 +24,40 @@ For each instruction it does the following:
 The `FLAG` register stores information from the output of the last instruction:
     | bit # | name   | value                                       |
     ================================================================
-    |   0   | status | 1 if instruction is successful, 0 otherwise |
-    |   1   | carry  | 1 if carry required                         |
-    |   2   | zero   | 1 if last instruction equated to zero       |
+    | ---X  | status | 1 if instruction is successful, 0 otherwise |
+    | --X-  | carry  | 1 if carry required                         |
+    | -X--  | zero   | 1 if last instruction equated to zero       |
 
 ## Opcodes/operands and what they do
 
     | Opcode | Operand            | Expression                               |
     ==========================================================================
-    | 0000   | mov    REG1, VAL   | REG1 = VAL                               |
-    | 0001   | load   REG1, REG2  | load location referenced by REG2 to REG1 |
-    | 0010   | store  REG1, REG2  | save val REG2 to location REG1           |
-    | 0011   | in     REG1, REG2  | REG1 = read port number in REG2          |
-    | 0100   | out    PORT, REG1  | write value in REG1 to port PORT         |
-    | 0101   | add    REG1, REG2  | REG1 = REG1 + REG2                       |
-    | 0110   | and    REG1, REG2  | REG1 = REG1 & REG2                       |
-    | 0111   | or     REG1, REG2  | REG1 = REG1 | REG2                       |
-    | 1000   | xor    REG1, REG2  | REG1 = REG1 xor REG2                     |
-    | 1001   | shl    REG1, REG2  | REG1 = REG1 << REG2                      |
-    | 1010   | shr    REG1, REG2  | REG1 = REG1 >> REG2                      |
-    | 1011   | jmp    REG1        | jump to value in REG1                    |
+    | 0000   | movv   REG1, VAL   | REG1 = VAL                               |
+    | 0001   | movr   REG1, REG2  | REG1 = REG2                              |
+    | 0010   | load   REG1, REG2  | load location referenced by REG2 to REG1 |
+    | 0011   | store  REG1, REG2  | save val REG2 to location REG1           |
+    | 0100   | in     REG1, REG2  | REG1 = read port number in REG2          |
+    | 0101   | out    PORT, REG1  | write value in REG1 to port PORT         |
+    | 0110   | add    REG1, REG2  | REG1 = REG1 + REG2                       |
+    | 0111   | and    REG1, REG2  | REG1 = REG1 & REG2                       |
+    | 1000   | or     REG1, REG2  | REG1 = REG1 | REG2                       |
+    | 1001   | xor    REG1, REG2  | REG1 = REG1 xor REG2                     |
+    | 1010   | shl    REG1, REG2  | REG1 = REG1 << REG2                      |
+    | 1011   | shr    REG1, REG2  | REG1 = REG1 >> REG2                      |
     | 1100   | jz     REG1        | jump if zero flag == 1                   |
     | 1101   | lt     REG1, REG2  | status flag = REG1 < REG2                |
     | 1110   | gt     REG1, REG2  | status flag = REG1 > REG2                |
     | 1111   | iret               | return from interrupt                    |
+
+### "Missing" opcodes
+
+    JMP regA
+        or FLAGS, 0b0100
+        jz regA
+    
+    CMP regA, regB
+        xor regA, regB
+
 
 ## Interrupts
 
