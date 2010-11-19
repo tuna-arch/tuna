@@ -300,8 +300,8 @@
   </options>
   <mappings>
     <tool lib="0" name="Menu Tool" map="Button2" />
-    <tool lib="0" name="Menu Tool" map="Ctrl Button1" />
     <tool lib="0" name="Menu Tool" map="Button3" />
+    <tool lib="0" name="Menu Tool" map="Ctrl Button1" />
   </mappings>
   <toolbar>
     <tool lib="0" name="Poke Tool" />
@@ -356,68 +356,103 @@
     <a name="label" val="" />
     <a name="labelup" val="east" />
     <a name="labelfont" val="DejaVu Sans Mono plain 12" />
+    <wire from="(140,800)" to="(160,800)" />
     <wire from="(160,460)" to="(200,460)" />
-    <wire from="(160,1010)" to="(160,1040)" />
-    <wire from="(160,1160)" to="(170,1160)" />
-    <wire from="(150,1180)" to="(170,1180)" />
-    <wire from="(140,980)" to="(150,980)" />
+    <wire from="(150,670)" to="(150,680)" />
+    <wire from="(150,850)" to="(150,860)" />
+    <wire from="(40,400)" to="(60,400)" />
     <wire from="(160,490)" to="(200,490)" />
+    <wire from="(90,300)" to="(90,420)" />
     <wire from="(160,520)" to="(200,520)" />
     <wire from="(60,430)" to="(130,430)" />
-    <wire from="(90,300)" to="(90,420)" />
-    <wire from="(90,930)" to="(90,1110)" />
-    <wire from="(180,1110)" to="(180,1150)" />
-    <wire from="(160,1130)" to="(160,1160)" />
+    <wire from="(160,800)" to="(160,830)" />
+    <wire from="(150,660)" to="(170,660)" />
+    <wire from="(50,430)" to="(50,440)" />
+    <wire from="(60,400)" to="(60,430)" />
     <wire from="(160,430)" to="(200,430)" />
     <wire from="(160,400)" to="(200,400)" />
-    <wire from="(160,950)" to="(160,980)" />
     <wire from="(60,460)" to="(130,460)" />
-    <wire from="(140,1220)" to="(160,1220)" />
-    <wire from="(150,1160)" to="(150,1170)" />
-    <wire from="(160,980)" to="(170,980)" />
-    <wire from="(140,1040)" to="(160,1040)" />
-    <wire from="(90,420)" to="(90,930)" />
+    <wire from="(50,450)" to="(130,450)" />
+    <wire from="(180,780)" to="(180,820)" />
+    <wire from="(160,680)" to="(160,710)" />
+    <wire from="(160,860)" to="(170,860)" />
+    <wire from="(140,890)" to="(160,890)" />
+    <wire from="(140,830)" to="(150,830)" />
+    <wire from="(150,830)" to="(150,840)" />
+    <wire from="(140,680)" to="(150,680)" />
     <wire from="(160,380)" to="(200,380)" />
+    <wire from="(90,600)" to="(90,780)" />
+    <wire from="(150,850)" to="(170,850)" />
+    <wire from="(140,860)" to="(150,860)" />
     <wire from="(160,410)" to="(200,410)" />
-    <wire from="(140,1010)" to="(150,1010)" />
-    <wire from="(90,1110)" to="(180,1110)" />
-    <wire from="(140,1130)" to="(160,1130)" />
-    <wire from="(160,1010)" to="(170,1010)" />
-    <wire from="(150,1000)" to="(170,1000)" />
+    <wire from="(90,780)" to="(180,780)" />
+    <wire from="(140,650)" to="(150,650)" />
+    <wire from="(40,490)" to="(60,490)" />
+    <wire from="(160,680)" to="(170,680)" />
+    <wire from="(160,830)" to="(170,830)" />
+    <wire from="(50,440)" to="(130,440)" />
     <wire from="(160,440)" to="(200,440)" />
-    <wire from="(150,1000)" to="(150,1010)" />
+    <wire from="(160,650)" to="(170,650)" />
+    <wire from="(40,430)" to="(50,430)" />
+    <wire from="(150,670)" to="(170,670)" />
+    <wire from="(40,460)" to="(50,460)" />
     <wire from="(90,420)" to="(130,420)" />
-    <wire from="(140,950)" to="(160,950)" />
-    <wire from="(150,1180)" to="(150,1190)" />
-    <wire from="(60,440)" to="(130,440)" />
+    <wire from="(90,420)" to="(90,600)" />
+    <wire from="(50,450)" to="(50,460)" />
+    <wire from="(180,600)" to="(180,640)" />
     <wire from="(160,510)" to="(200,510)" />
-    <wire from="(160,1190)" to="(170,1190)" />
     <wire from="(160,500)" to="(200,500)" />
-    <wire from="(180,930)" to="(180,970)" />
+    <wire from="(160,620)" to="(160,650)" />
     <wire from="(160,470)" to="(200,470)" />
-    <wire from="(150,980)" to="(150,990)" />
-    <wire from="(160,1190)" to="(160,1220)" />
+    <wire from="(140,710)" to="(160,710)" />
+    <wire from="(150,650)" to="(150,660)" />
     <wire from="(160,480)" to="(200,480)" />
-    <wire from="(60,450)" to="(130,450)" />
+    <wire from="(160,860)" to="(160,890)" />
+    <wire from="(60,460)" to="(60,490)" />
     <wire from="(160,390)" to="(200,390)" />
-    <wire from="(150,1170)" to="(170,1170)" />
+    <wire from="(150,840)" to="(170,840)" />
     <wire from="(160,420)" to="(200,420)" />
-    <wire from="(140,1190)" to="(150,1190)" />
-    <wire from="(150,990)" to="(170,990)" />
-    <wire from="(90,930)" to="(180,930)" />
+    <wire from="(140,620)" to="(160,620)" />
+    <wire from="(90,600)" to="(180,600)" />
     <wire from="(160,450)" to="(200,450)" />
-    <wire from="(140,1160)" to="(150,1160)" />
     <wire from="(160,370)" to="(200,370)" />
-    <comp name="quad pulse-triggered D flip-flop" loc="(200,1160)">
+    <comp lib="0" name="Pin" loc="(40,490)">
       <a name="facing" val="east" />
+      <a name="output" val="false" />
+      <a name="width" val="1" />
+      <a name="tristate" val="false" />
+      <a name="pull" val="none" />
+      <a name="label" val="" />
+      <a name="labelloc" val="west" />
+      <a name="labelfont" val="SansSerif plain 12" />
     </comp>
-    <comp lib="0" name="Text" loc="(185,545)">
-      <a name="text" val="-&gt; 1111" />
+    <comp lib="0" name="Pin" loc="(40,430)">
+      <a name="facing" val="east" />
+      <a name="output" val="false" />
+      <a name="width" val="1" />
+      <a name="tristate" val="false" />
+      <a name="pull" val="none" />
+      <a name="label" val="" />
+      <a name="labelloc" val="west" />
+      <a name="labelfont" val="SansSerif plain 12" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(40,400)">
+      <a name="facing" val="east" />
+      <a name="output" val="false" />
+      <a name="width" val="1" />
+      <a name="tristate" val="false" />
+      <a name="pull" val="none" />
+      <a name="label" val="" />
+      <a name="labelloc" val="west" />
+      <a name="labelfont" val="SansSerif plain 12" />
+    </comp>
+    <comp lib="0" name="Text" loc="(151,588)">
+      <a name="text" val="IN1" />
       <a name="font" val="SansSerif plain 12" />
       <a name="halign" val="center" />
       <a name="valign" val="base" />
     </comp>
-    <comp lib="0" name="Pin" loc="(140,1160)">
+    <comp lib="0" name="Pin" loc="(40,460)">
       <a name="facing" val="east" />
       <a name="output" val="false" />
       <a name="width" val="1" />
@@ -427,7 +462,7 @@
       <a name="labelloc" val="west" />
       <a name="labelfont" val="SansSerif plain 12" />
     </comp>
-    <comp lib="0" name="Pin" loc="(140,980)">
+    <comp lib="0" name="Pin" loc="(140,830)">
       <a name="facing" val="east" />
       <a name="output" val="false" />
       <a name="width" val="1" />
@@ -437,18 +472,11 @@
       <a name="labelloc" val="west" />
       <a name="labelfont" val="SansSerif plain 12" />
     </comp>
-    <comp name="quad pulse-triggered D flip-flop" loc="(200,980)">
-      <a name="facing" val="east" />
-    </comp>
-    <comp lib="0" name="Pin" loc="(140,1220)">
-      <a name="facing" val="east" />
-      <a name="output" val="false" />
-      <a name="width" val="1" />
-      <a name="tristate" val="false" />
-      <a name="pull" val="none" />
-      <a name="label" val="" />
-      <a name="labelloc" val="west" />
-      <a name="labelfont" val="SansSerif plain 12" />
+    <comp lib="0" name="Text" loc="(156,330)">
+      <a name="text" val="Decoder Module" />
+      <a name="font" val="SansSerif plain 12" />
+      <a name="halign" val="center" />
+      <a name="valign" val="base" />
     </comp>
     <comp lib="0" name="Clock" loc="(90,300)">
       <a name="facing" val="south" />
@@ -458,10 +486,7 @@
       <a name="labelloc" val="west" />
       <a name="labelfont" val="SansSerif plain 12" />
     </comp>
-    <comp name="decoder module" loc="(160,370)">
-      <a name="facing" val="east" />
-    </comp>
-    <comp lib="0" name="Pin" loc="(140,1040)">
+    <comp lib="0" name="Pin" loc="(140,800)">
       <a name="facing" val="east" />
       <a name="output" val="false" />
       <a name="width" val="1" />
@@ -477,11 +502,60 @@
       <a name="halign" val="center" />
       <a name="valign" val="base" />
     </comp>
-    <comp lib="0" name="Text" loc="(156,330)">
-      <a name="text" val="Decoder Module" />
+    <comp lib="0" name="Pin" loc="(140,710)">
+      <a name="facing" val="east" />
+      <a name="output" val="false" />
+      <a name="width" val="1" />
+      <a name="tristate" val="false" />
+      <a name="pull" val="none" />
+      <a name="label" val="" />
+      <a name="labelloc" val="west" />
+      <a name="labelfont" val="SansSerif plain 12" />
+    </comp>
+    <comp lib="0" name="Text" loc="(185,545)">
+      <a name="text" val="-&gt; 1111" />
       <a name="font" val="SansSerif plain 12" />
       <a name="halign" val="center" />
       <a name="valign" val="base" />
+    </comp>
+    <comp name="decoder module" loc="(160,370)">
+      <a name="facing" val="east" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(140,650)">
+      <a name="facing" val="east" />
+      <a name="output" val="false" />
+      <a name="width" val="1" />
+      <a name="tristate" val="false" />
+      <a name="pull" val="none" />
+      <a name="label" val="" />
+      <a name="labelloc" val="west" />
+      <a name="labelfont" val="SansSerif plain 12" />
+    </comp>
+    <comp lib="0" name="Text" loc="(151,770)">
+      <a name="text" val="IN2" />
+      <a name="font" val="SansSerif plain 12" />
+      <a name="halign" val="center" />
+      <a name="valign" val="base" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(140,620)">
+      <a name="facing" val="east" />
+      <a name="output" val="false" />
+      <a name="width" val="1" />
+      <a name="tristate" val="false" />
+      <a name="pull" val="none" />
+      <a name="label" val="" />
+      <a name="labelloc" val="west" />
+      <a name="labelfont" val="SansSerif plain 12" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(140,680)">
+      <a name="facing" val="east" />
+      <a name="output" val="false" />
+      <a name="width" val="1" />
+      <a name="tristate" val="false" />
+      <a name="pull" val="none" />
+      <a name="label" val="" />
+      <a name="labelloc" val="west" />
+      <a name="labelfont" val="SansSerif plain 12" />
     </comp>
     <comp lib="0" name="Text" loc="(189,352)">
       <a name="text" val="-&gt; 0000" />
@@ -489,7 +563,13 @@
       <a name="halign" val="center" />
       <a name="valign" val="base" />
     </comp>
-    <comp lib="0" name="Pin" loc="(140,1130)">
+    <comp name="quad pulse-triggered D flip-flop" loc="(200,650)">
+      <a name="facing" val="east" />
+    </comp>
+    <comp name="quad pulse-triggered D flip-flop" loc="(200,830)">
+      <a name="facing" val="east" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(140,890)">
       <a name="facing" val="east" />
       <a name="output" val="false" />
       <a name="width" val="1" />
@@ -499,39 +579,7 @@
       <a name="labelloc" val="west" />
       <a name="labelfont" val="SansSerif plain 12" />
     </comp>
-    <comp lib="0" name="Pin" loc="(140,950)">
-      <a name="facing" val="east" />
-      <a name="output" val="false" />
-      <a name="width" val="1" />
-      <a name="tristate" val="false" />
-      <a name="pull" val="none" />
-      <a name="label" val="" />
-      <a name="labelloc" val="west" />
-      <a name="labelfont" val="SansSerif plain 12" />
-    </comp>
-    <comp lib="0" name="Text" loc="(151,918)">
-      <a name="text" val="IN1" />
-      <a name="font" val="SansSerif plain 12" />
-      <a name="halign" val="center" />
-      <a name="valign" val="base" />
-    </comp>
-    <comp lib="0" name="Text" loc="(151,1100)">
-      <a name="text" val="IN2" />
-      <a name="font" val="SansSerif plain 12" />
-      <a name="halign" val="center" />
-      <a name="valign" val="base" />
-    </comp>
-    <comp lib="0" name="Pin" loc="(140,1190)">
-      <a name="facing" val="east" />
-      <a name="output" val="false" />
-      <a name="width" val="1" />
-      <a name="tristate" val="false" />
-      <a name="pull" val="none" />
-      <a name="label" val="" />
-      <a name="labelloc" val="west" />
-      <a name="labelfont" val="SansSerif plain 12" />
-    </comp>
-    <comp lib="0" name="Pin" loc="(140,1010)">
+    <comp lib="0" name="Pin" loc="(140,860)">
       <a name="facing" val="east" />
       <a name="output" val="false" />
       <a name="width" val="1" />
@@ -560,60 +608,24 @@
     <wire from="(250,110)" to="(340,110)" />
     <wire from="(340,70)" to="(360,70)" />
     <wire from="(320,70)" to="(340,70)" />
-    <wire from="(80,70)" to="(120,70)" />
     <wire from="(340,160)" to="(360,160)" />
+    <wire from="(80,70)" to="(120,70)" />
     <wire from="(60,30)" to="(120,30)" />
     <wire from="(80,200)" to="(120,200)" />
     <wire from="(180,180)" to="(260,180)" />
     <wire from="(100,160)" to="(120,160)" />
     <wire from="(80,70)" to="(80,200)" />
-    <wire from="(180,50)" to="(210,50)" />
     <wire from="(320,160)" to="(340,160)" />
+    <wire from="(180,50)" to="(210,50)" />
     <wire from="(340,120)" to="(340,160)" />
     <wire from="(230,120)" to="(340,120)" />
-    <comp lib="1" name="NAND Gate" loc="(180,180)">
-      <a name="facing" val="east" />
-      <a name="width" val="1" />
-      <a name="size" val="50" />
-      <a name="inputs" val="2" />
-    </comp>
-    <comp lib="0" name="Pin" loc="(360,160)">
-      <a name="facing" val="west" />
-      <a name="output" val="true" />
-      <a name="width" val="1" />
-      <a name="tristate" val="true" />
-      <a name="pull" val="none" />
-      <a name="label" val="Q-not" />
-      <a name="labelloc" val="east" />
-      <a name="labelfont" val="SansSerif plain 12" />
-    </comp>
-    <comp lib="1" name="NAND Gate" loc="(320,70)">
-      <a name="facing" val="east" />
-      <a name="width" val="1" />
-      <a name="size" val="50" />
-      <a name="inputs" val="2" />
-    </comp>
-    <comp lib="0" name="Pin" loc="(360,70)">
-      <a name="facing" val="west" />
-      <a name="output" val="true" />
-      <a name="width" val="1" />
-      <a name="tristate" val="true" />
-      <a name="pull" val="none" />
-      <a name="label" val="Q" />
-      <a name="labelloc" val="east" />
-      <a name="labelfont" val="SansSerif plain 12" />
-    </comp>
-    <comp lib="0" name="Pin" loc="(60,200)">
-      <a name="facing" val="east" />
-      <a name="output" val="false" />
-      <a name="width" val="1" />
-      <a name="tristate" val="false" />
-      <a name="pull" val="none" />
-      <a name="label" val="E" />
-      <a name="labelloc" val="west" />
-      <a name="labelfont" val="SansSerif plain 12" />
-    </comp>
     <comp lib="1" name="NAND Gate" loc="(320,160)">
+      <a name="facing" val="east" />
+      <a name="width" val="1" />
+      <a name="size" val="50" />
+      <a name="inputs" val="2" />
+    </comp>
+    <comp lib="1" name="NAND Gate" loc="(180,50)">
       <a name="facing" val="east" />
       <a name="width" val="1" />
       <a name="size" val="50" />
@@ -629,7 +641,43 @@
       <a name="labelloc" val="west" />
       <a name="labelfont" val="SansSerif plain 12" />
     </comp>
-    <comp lib="1" name="NAND Gate" loc="(180,50)">
+    <comp lib="0" name="Pin" loc="(60,200)">
+      <a name="facing" val="east" />
+      <a name="output" val="false" />
+      <a name="width" val="1" />
+      <a name="tristate" val="false" />
+      <a name="pull" val="none" />
+      <a name="label" val="E" />
+      <a name="labelloc" val="west" />
+      <a name="labelfont" val="SansSerif plain 12" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(360,70)">
+      <a name="facing" val="west" />
+      <a name="output" val="true" />
+      <a name="width" val="1" />
+      <a name="tristate" val="true" />
+      <a name="pull" val="none" />
+      <a name="label" val="Q" />
+      <a name="labelloc" val="east" />
+      <a name="labelfont" val="SansSerif plain 12" />
+    </comp>
+    <comp lib="1" name="NAND Gate" loc="(320,70)">
+      <a name="facing" val="east" />
+      <a name="width" val="1" />
+      <a name="size" val="50" />
+      <a name="inputs" val="2" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(360,160)">
+      <a name="facing" val="west" />
+      <a name="output" val="true" />
+      <a name="width" val="1" />
+      <a name="tristate" val="true" />
+      <a name="pull" val="none" />
+      <a name="label" val="Q-not" />
+      <a name="labelloc" val="east" />
+      <a name="labelfont" val="SansSerif plain 12" />
+    </comp>
+    <comp lib="1" name="NAND Gate" loc="(180,180)">
       <a name="facing" val="east" />
       <a name="width" val="1" />
       <a name="size" val="50" />
@@ -654,19 +702,6 @@
     <wire from="(260,50)" to="(260,70)" />
     <wire from="(200,50)" to="(210,50)" />
     <wire from="(70,70)" to="(100,70)" />
-    <comp name="gated D-latch" loc="(240,40)">
-      <a name="facing" val="east" />
-    </comp>
-    <comp lib="0" name="Pin" loc="(70,40)">
-      <a name="facing" val="east" />
-      <a name="output" val="false" />
-      <a name="width" val="1" />
-      <a name="tristate" val="false" />
-      <a name="pull" val="none" />
-      <a name="label" val="D" />
-      <a name="labelloc" val="west" />
-      <a name="labelfont" val="SansSerif plain 12" />
-    </comp>
     <comp lib="0" name="Pin" loc="(280,40)">
       <a name="facing" val="west" />
       <a name="output" val="true" />
@@ -676,11 +711,6 @@
       <a name="label" val="Q" />
       <a name="labelloc" val="east" />
       <a name="labelfont" val="SansSerif plain 12" />
-    </comp>
-    <comp lib="1" name="NOT Gate" loc="(190,70)">
-      <a name="facing" val="east" />
-      <a name="width" val="1" />
-      <a name="size" val="30" />
     </comp>
     <comp lib="0" name="Pin" loc="(70,70)">
       <a name="facing" val="east" />
@@ -705,6 +735,24 @@
       <a name="labelloc" val="east" />
       <a name="labelfont" val="SansSerif plain 12" />
     </comp>
+    <comp lib="1" name="NOT Gate" loc="(190,70)">
+      <a name="facing" val="east" />
+      <a name="width" val="1" />
+      <a name="size" val="30" />
+    </comp>
+    <comp name="gated D-latch" loc="(240,40)">
+      <a name="facing" val="east" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(70,40)">
+      <a name="facing" val="east" />
+      <a name="output" val="false" />
+      <a name="width" val="1" />
+      <a name="tristate" val="false" />
+      <a name="pull" val="none" />
+      <a name="label" val="D" />
+      <a name="labelloc" val="west" />
+      <a name="labelfont" val="SansSerif plain 12" />
+    </comp>
   </circuit>
   <circuit name="quad pulse-triggered D flip-flop">
     <a name="circuit" val="quad pulse-triggered D flip-flop" />
@@ -723,42 +771,29 @@
     <wire from="(170,280)" to="(190,280)" />
     <wire from="(120,280)" to="(140,280)" />
     <wire from="(130,290)" to="(130,390)" />
-    <wire from="(120,80)" to="(140,80)" />
     <wire from="(130,290)" to="(140,290)" />
-    <wire from="(130,390)" to="(140,390)" />
+    <wire from="(120,80)" to="(140,80)" />
     <wire from="(120,180)" to="(140,180)" />
-    <wire from="(130,90)" to="(140,90)" />
+    <wire from="(130,390)" to="(140,390)" />
     <wire from="(130,190)" to="(140,190)" />
-    <comp lib="0" name="Pin" loc="(150,30)">
-      <a name="facing" val="south" />
-      <a name="output" val="false" />
-      <a name="width" val="1" />
-      <a name="tristate" val="false" />
-      <a name="pull" val="none" />
-      <a name="label" val="Clock" />
-      <a name="labelloc" val="west" />
-      <a name="labelfont" val="SansSerif plain 12" />
-    </comp>
-    <comp name="pulse-triggered D flip-flop" loc="(170,180)">
-      <a name="facing" val="east" />
-    </comp>
-    <comp lib="0" name="Pin" loc="(120,380)">
-      <a name="facing" val="east" />
-      <a name="output" val="false" />
-      <a name="width" val="1" />
-      <a name="tristate" val="false" />
-      <a name="pull" val="none" />
-      <a name="label" val="D4" />
-      <a name="labelloc" val="west" />
-      <a name="labelfont" val="SansSerif plain 12" />
-    </comp>
-    <comp lib="0" name="Pin" loc="(190,80)">
+    <wire from="(130,90)" to="(140,90)" />
+    <comp lib="0" name="Pin" loc="(190,280)">
       <a name="facing" val="west" />
       <a name="output" val="true" />
       <a name="width" val="1" />
       <a name="tristate" val="true" />
       <a name="pull" val="none" />
-      <a name="label" val="Q1" />
+      <a name="label" val="Q3" />
+      <a name="labelloc" val="east" />
+      <a name="labelfont" val="SansSerif plain 12" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(190,380)">
+      <a name="facing" val="west" />
+      <a name="output" val="true" />
+      <a name="width" val="1" />
+      <a name="tristate" val="true" />
+      <a name="pull" val="none" />
+      <a name="label" val="Q4" />
       <a name="labelloc" val="east" />
       <a name="labelfont" val="SansSerif plain 12" />
     </comp>
@@ -775,29 +810,6 @@
       <a name="labelloc" val="west" />
       <a name="labelfont" val="SansSerif plain 12" />
     </comp>
-    <comp lib="0" name="Pin" loc="(120,80)">
-      <a name="facing" val="east" />
-      <a name="output" val="false" />
-      <a name="width" val="1" />
-      <a name="tristate" val="false" />
-      <a name="pull" val="none" />
-      <a name="label" val="D1" />
-      <a name="labelloc" val="west" />
-      <a name="labelfont" val="SansSerif plain 12" />
-    </comp>
-    <comp name="pulse-triggered D flip-flop" loc="(170,280)">
-      <a name="facing" val="east" />
-    </comp>
-    <comp lib="0" name="Pin" loc="(120,180)">
-      <a name="facing" val="east" />
-      <a name="output" val="false" />
-      <a name="width" val="1" />
-      <a name="tristate" val="false" />
-      <a name="pull" val="none" />
-      <a name="label" val="D2" />
-      <a name="labelloc" val="west" />
-      <a name="labelfont" val="SansSerif plain 12" />
-    </comp>
     <comp name="pulse-triggered D flip-flop" loc="(170,380)">
       <a name="facing" val="east" />
     </comp>
@@ -811,25 +823,61 @@
       <a name="labelloc" val="east" />
       <a name="labelfont" val="SansSerif plain 12" />
     </comp>
-    <comp lib="0" name="Pin" loc="(190,380)">
+    <comp lib="0" name="Pin" loc="(120,80)">
+      <a name="facing" val="east" />
+      <a name="output" val="false" />
+      <a name="width" val="1" />
+      <a name="tristate" val="false" />
+      <a name="pull" val="none" />
+      <a name="label" val="D1" />
+      <a name="labelloc" val="west" />
+      <a name="labelfont" val="SansSerif plain 12" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(120,180)">
+      <a name="facing" val="east" />
+      <a name="output" val="false" />
+      <a name="width" val="1" />
+      <a name="tristate" val="false" />
+      <a name="pull" val="none" />
+      <a name="label" val="D2" />
+      <a name="labelloc" val="west" />
+      <a name="labelfont" val="SansSerif plain 12" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(120,380)">
+      <a name="facing" val="east" />
+      <a name="output" val="false" />
+      <a name="width" val="1" />
+      <a name="tristate" val="false" />
+      <a name="pull" val="none" />
+      <a name="label" val="D4" />
+      <a name="labelloc" val="west" />
+      <a name="labelfont" val="SansSerif plain 12" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(150,30)">
+      <a name="facing" val="south" />
+      <a name="output" val="false" />
+      <a name="width" val="1" />
+      <a name="tristate" val="false" />
+      <a name="pull" val="none" />
+      <a name="label" val="Clock" />
+      <a name="labelloc" val="west" />
+      <a name="labelfont" val="SansSerif plain 12" />
+    </comp>
+    <comp name="pulse-triggered D flip-flop" loc="(170,180)">
+      <a name="facing" val="east" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(190,80)">
       <a name="facing" val="west" />
       <a name="output" val="true" />
       <a name="width" val="1" />
       <a name="tristate" val="true" />
       <a name="pull" val="none" />
-      <a name="label" val="Q4" />
+      <a name="label" val="Q1" />
       <a name="labelloc" val="east" />
       <a name="labelfont" val="SansSerif plain 12" />
     </comp>
-    <comp lib="0" name="Pin" loc="(190,280)">
-      <a name="facing" val="west" />
-      <a name="output" val="true" />
-      <a name="width" val="1" />
-      <a name="tristate" val="true" />
-      <a name="pull" val="none" />
-      <a name="label" val="Q3" />
-      <a name="labelloc" val="east" />
-      <a name="labelfont" val="SansSerif plain 12" />
+    <comp name="pulse-triggered D flip-flop" loc="(170,280)">
+      <a name="facing" val="east" />
     </comp>
   </circuit>
   <circuit name="decoder module">
@@ -838,8 +886,8 @@
     <a name="labelup" val="east" />
     <a name="labelfont" val="SansSerif plain 12" />
     <wire from="(530,610)" to="(530,620)" />
-    <wire from="(490,550)" to="(530,550)" />
     <wire from="(320,490)" to="(350,490)" />
+    <wire from="(490,550)" to="(530,550)" />
     <wire from="(450,600)" to="(450,660)" />
     <wire from="(340,240)" to="(340,360)" />
     <wire from="(120,400)" to="(140,400)" />
@@ -847,9 +895,9 @@
     <wire from="(380,560)" to="(510,560)" />
     <wire from="(320,340)" to="(350,340)" />
     <wire from="(450,540)" to="(450,600)" />
-    <wire from="(430,60)" to="(430,120)" />
-    <wire from="(120,400)" to="(120,410)" />
     <wire from="(380,350)" to="(460,350)" />
+    <wire from="(120,400)" to="(120,410)" />
+    <wire from="(430,60)" to="(430,120)" />
     <wire from="(430,180)" to="(550,180)" />
     <wire from="(520,740)" to="(550,740)" />
     <wire from="(340,240)" to="(350,240)" />
@@ -865,18 +913,18 @@
     <wire from="(530,550)" to="(530,560)" />
     <wire from="(310,570)" to="(350,570)" />
     <wire from="(190,420)" to="(320,420)" />
-    <wire from="(380,620)" to="(520,620)" />
     <wire from="(170,380)" to="(190,380)" />
+    <wire from="(380,620)" to="(520,620)" />
     <wire from="(340,360)" to="(340,390)" />
-    <wire from="(120,390)" to="(140,390)" />
     <wire from="(340,550)" to="(350,550)" />
+    <wire from="(120,390)" to="(140,390)" />
     <wire from="(520,740)" to="(520,980)" />
-    <wire from="(110,350)" to="(130,350)" />
-    <wire from="(320,420)" to="(320,490)" />
     <wire from="(510,680)" to="(510,920)" />
+    <wire from="(320,420)" to="(320,490)" />
+    <wire from="(110,350)" to="(130,350)" />
     <wire from="(310,220)" to="(310,360)" />
-    <wire from="(190,370)" to="(190,380)" />
     <wire from="(490,80)" to="(550,80)" />
+    <wire from="(190,370)" to="(190,380)" />
     <wire from="(110,440)" to="(130,440)" />
     <wire from="(490,320)" to="(490,440)" />
     <wire from="(170,410)" to="(190,410)" />
@@ -939,28 +987,28 @@
     <wire from="(580,670)" to="(610,670)" />
     <wire from="(330,180)" to="(350,180)" />
     <wire from="(510,200)" to="(550,200)" />
-    <wire from="(500,140)" to="(550,140)" />
     <wire from="(500,860)" to="(550,860)" />
-    <wire from="(500,500)" to="(500,610)" />
-    <wire from="(430,170)" to="(430,180)" />
+    <wire from="(500,140)" to="(550,140)" />
     <wire from="(490,800)" to="(550,800)" />
+    <wire from="(430,170)" to="(430,180)" />
+    <wire from="(500,500)" to="(500,610)" />
     <wire from="(440,300)" to="(550,300)" />
     <wire from="(230,360)" to="(310,360)" />
-    <wire from="(190,360)" to="(190,370)" />
     <wire from="(440,420)" to="(440,480)" />
+    <wire from="(190,360)" to="(190,370)" />
     <wire from="(200,380)" to="(200,390)" />
     <wire from="(130,350)" to="(130,380)" />
     <wire from="(440,420)" to="(550,420)" />
     <wire from="(580,850)" to="(610,850)" />
     <wire from="(520,980)" to="(550,980)" />
-    <wire from="(320,630)" to="(350,630)" />
     <wire from="(330,300)" to="(330,380)" />
-    <wire from="(440,360)" to="(550,360)" />
+    <wire from="(320,630)" to="(350,630)" />
     <wire from="(510,440)" to="(550,440)" />
+    <wire from="(440,360)" to="(550,360)" />
     <wire from="(510,200)" to="(510,440)" />
     <wire from="(580,910)" to="(610,910)" />
-    <wire from="(500,610)" to="(530,610)" />
     <wire from="(200,400)" to="(340,400)" />
+    <wire from="(500,610)" to="(530,610)" />
     <wire from="(530,620)" to="(550,620)" />
     <wire from="(580,730)" to="(610,730)" />
     <wire from="(190,370)" to="(320,370)" />
@@ -974,18 +1022,18 @@
     <wire from="(450,540)" to="(550,540)" />
     <wire from="(460,350)" to="(460,780)" />
     <wire from="(230,380)" to="(330,380)" />
-    <wire from="(520,620)" to="(520,740)" />
     <wire from="(510,440)" to="(510,560)" />
+    <wire from="(520,620)" to="(520,740)" />
     <wire from="(580,130)" to="(610,130)" />
     <wire from="(320,340)" to="(320,370)" />
     <wire from="(190,430)" to="(210,430)" />
     <wire from="(310,160)" to="(310,220)" />
     <wire from="(490,320)" to="(550,320)" />
     <wire from="(320,490)" to="(320,630)" />
-    <wire from="(170,390)" to="(200,390)" />
-    <wire from="(110,380)" to="(120,380)" />
-    <wire from="(380,440)" to="(490,440)" />
     <wire from="(460,900)" to="(460,960)" />
+    <wire from="(380,440)" to="(490,440)" />
+    <wire from="(110,380)" to="(120,380)" />
+    <wire from="(170,390)" to="(200,390)" />
     <wire from="(510,920)" to="(550,920)" />
     <wire from="(500,140)" to="(500,380)" />
     <wire from="(310,430)" to="(350,430)" />
@@ -993,8 +1041,8 @@
     <wire from="(440,480)" to="(550,480)" />
     <wire from="(110,410)" to="(120,410)" />
     <wire from="(580,790)" to="(610,790)" />
-    <wire from="(520,260)" to="(520,500)" />
     <wire from="(320,280)" to="(350,280)" />
+    <wire from="(520,260)" to="(520,500)" />
     <wire from="(580,70)" to="(610,70)" />
     <comp lib="0" name="Pin" loc="(610,190)">
       <a name="facing" val="west" />
@@ -1006,35 +1054,32 @@
       <a name="labelloc" val="east" />
       <a name="labelfont" val="SansSerif plain 12" />
     </comp>
-    <comp lib="1" name="AND Gate" loc="(380,170)">
+    <comp lib="1" name="AND Gate" loc="(380,230)">
       <a name="facing" val="east" />
       <a name="width" val="1" />
       <a name="size" val="30" />
       <a name="inputs" val="2" />
     </comp>
-    <comp lib="1" name="AND Gate" loc="(580,370)">
+    <comp lib="1" name="AND Gate" loc="(380,290)">
       <a name="facing" val="east" />
       <a name="width" val="1" />
       <a name="size" val="30" />
       <a name="inputs" val="2" />
     </comp>
-    <comp lib="1" name="AND Gate" loc="(580,910)">
+    <comp lib="1" name="AND Gate" loc="(580,850)">
       <a name="facing" val="east" />
       <a name="width" val="1" />
       <a name="size" val="30" />
       <a name="inputs" val="2" />
     </comp>
-    <comp name="quad pulse-triggered D flip-flop" loc="(170,380)">
-      <a name="facing" val="east" />
-    </comp>
-    <comp lib="0" name="Pin" loc="(110,320)">
-      <a name="facing" val="east" />
-      <a name="output" val="false" />
+    <comp lib="0" name="Pin" loc="(610,370)">
+      <a name="facing" val="west" />
+      <a name="output" val="true" />
       <a name="width" val="1" />
-      <a name="tristate" val="false" />
+      <a name="tristate" val="true" />
       <a name="pull" val="none" />
-      <a name="label" val="CLOCK" />
-      <a name="labelloc" val="west" />
+      <a name="label" val="0101" />
+      <a name="labelloc" val="east" />
       <a name="labelfont" val="SansSerif plain 12" />
     </comp>
     <comp lib="1" name="AND Gate" loc="(580,250)">
@@ -1043,29 +1088,48 @@
       <a name="size" val="30" />
       <a name="inputs" val="2" />
     </comp>
-    <comp lib="0" name="Text" loc="(365,535)">
-      <a name="text" val="XX10" />
+    <comp lib="0" name="Text" loc="(364,418)">
+      <a name="text" val="XX00" />
       <a name="font" val="SansSerif plain 12" />
       <a name="halign" val="center" />
       <a name="valign" val="base" />
     </comp>
-    <comp lib="0" name="Pin" loc="(110,350)">
-      <a name="facing" val="east" />
-      <a name="output" val="false" />
-      <a name="width" val="1" />
-      <a name="tristate" val="false" />
-      <a name="pull" val="none" />
-      <a name="label" val="1XXX (MSB)" />
-      <a name="labelloc" val="west" />
-      <a name="labelfont" val="SansSerif plain 12" />
-    </comp>
-    <comp lib="1" name="AND Gate" loc="(580,70)">
+    <comp lib="1" name="AND Gate" loc="(580,490)">
       <a name="facing" val="east" />
       <a name="width" val="1" />
       <a name="size" val="30" />
       <a name="inputs" val="2" />
     </comp>
-    <comp lib="1" name="AND Gate" loc="(580,190)">
+    <comp lib="1" name="NOT Gate" loc="(230,360)">
+      <a name="facing" val="east" />
+      <a name="width" val="1" />
+      <a name="size" val="20" />
+    </comp>
+    <comp lib="1" name="AND Gate" loc="(580,370)">
+      <a name="facing" val="east" />
+      <a name="width" val="1" />
+      <a name="size" val="30" />
+      <a name="inputs" val="2" />
+    </comp>
+    <comp lib="1" name="AND Gate" loc="(380,620)">
+      <a name="facing" val="east" />
+      <a name="width" val="1" />
+      <a name="size" val="30" />
+      <a name="inputs" val="2" />
+    </comp>
+    <comp lib="1" name="AND Gate" loc="(580,730)">
+      <a name="facing" val="east" />
+      <a name="width" val="1" />
+      <a name="size" val="30" />
+      <a name="inputs" val="2" />
+    </comp>
+    <comp lib="1" name="AND Gate" loc="(580,430)">
+      <a name="facing" val="east" />
+      <a name="width" val="1" />
+      <a name="size" val="30" />
+      <a name="inputs" val="2" />
+    </comp>
+    <comp lib="1" name="AND Gate" loc="(580,670)">
       <a name="facing" val="east" />
       <a name="width" val="1" />
       <a name="size" val="30" />
@@ -1081,83 +1145,6 @@
       <a name="labelloc" val="east" />
       <a name="labelfont" val="SansSerif plain 12" />
     </comp>
-    <comp lib="0" name="Pin" loc="(110,410)">
-      <a name="facing" val="east" />
-      <a name="output" val="false" />
-      <a name="width" val="1" />
-      <a name="tristate" val="false" />
-      <a name="pull" val="none" />
-      <a name="label" val="XX1X" />
-      <a name="labelloc" val="west" />
-      <a name="labelfont" val="SansSerif plain 12" />
-    </comp>
-    <comp lib="0" name="Pin" loc="(610,970)">
-      <a name="facing" val="west" />
-      <a name="output" val="true" />
-      <a name="width" val="1" />
-      <a name="tristate" val="true" />
-      <a name="pull" val="none" />
-      <a name="label" val="1111" />
-      <a name="labelloc" val="east" />
-      <a name="labelfont" val="SansSerif plain 12" />
-    </comp>
-    <comp lib="0" name="Text" loc="(366,475)">
-      <a name="text" val="XX01" />
-      <a name="font" val="SansSerif plain 12" />
-      <a name="halign" val="center" />
-      <a name="valign" val="base" />
-    </comp>
-    <comp lib="1" name="AND Gate" loc="(380,290)">
-      <a name="facing" val="east" />
-      <a name="width" val="1" />
-      <a name="size" val="30" />
-      <a name="inputs" val="2" />
-    </comp>
-    <comp lib="0" name="Pin" loc="(610,610)">
-      <a name="facing" val="west" />
-      <a name="output" val="true" />
-      <a name="width" val="1" />
-      <a name="tristate" val="true" />
-      <a name="pull" val="none" />
-      <a name="label" val="1001" />
-      <a name="labelloc" val="east" />
-      <a name="labelfont" val="SansSerif plain 12" />
-    </comp>
-    <comp lib="1" name="AND Gate" loc="(580,850)">
-      <a name="facing" val="east" />
-      <a name="width" val="1" />
-      <a name="size" val="30" />
-      <a name="inputs" val="2" />
-    </comp>
-    <comp lib="1" name="NOT Gate" loc="(230,360)">
-      <a name="facing" val="east" />
-      <a name="width" val="1" />
-      <a name="size" val="20" />
-    </comp>
-    <comp lib="1" name="AND Gate" loc="(380,620)">
-      <a name="facing" val="east" />
-      <a name="width" val="1" />
-      <a name="size" val="30" />
-      <a name="inputs" val="2" />
-    </comp>
-    <comp lib="1" name="AND Gate" loc="(580,310)">
-      <a name="facing" val="east" />
-      <a name="width" val="1" />
-      <a name="size" val="30" />
-      <a name="inputs" val="2" />
-    </comp>
-    <comp lib="1" name="AND Gate" loc="(580,430)">
-      <a name="facing" val="east" />
-      <a name="width" val="1" />
-      <a name="size" val="30" />
-      <a name="inputs" val="2" />
-    </comp>
-    <comp lib="1" name="AND Gate" loc="(580,730)">
-      <a name="facing" val="east" />
-      <a name="width" val="1" />
-      <a name="size" val="30" />
-      <a name="inputs" val="2" />
-    </comp>
     <comp lib="0" name="Pin" loc="(610,670)">
       <a name="facing" val="west" />
       <a name="output" val="true" />
@@ -1168,28 +1155,93 @@
       <a name="labelloc" val="east" />
       <a name="labelfont" val="SansSerif plain 12" />
     </comp>
-    <comp lib="0" name="Pin" loc="(610,730)">
-      <a name="facing" val="west" />
-      <a name="output" val="true" />
+    <comp lib="0" name="Pin" loc="(110,410)">
+      <a name="facing" val="east" />
+      <a name="output" val="false" />
       <a name="width" val="1" />
-      <a name="tristate" val="true" />
+      <a name="tristate" val="false" />
       <a name="pull" val="none" />
-      <a name="label" val="1011" />
-      <a name="labelloc" val="east" />
+      <a name="label" val="XX1X" />
+      <a name="labelloc" val="west" />
       <a name="labelfont" val="SansSerif plain 12" />
     </comp>
-    <comp lib="1" name="NOT Gate" loc="(230,380)">
-      <a name="facing" val="east" />
-      <a name="width" val="1" />
-      <a name="size" val="20" />
-    </comp>
-    <comp lib="1" name="AND Gate" loc="(380,500)">
+    <comp lib="1" name="AND Gate" loc="(380,560)">
       <a name="facing" val="east" />
       <a name="width" val="1" />
       <a name="size" val="30" />
       <a name="inputs" val="2" />
     </comp>
-    <comp lib="1" name="AND Gate" loc="(380,560)">
+    <comp lib="1" name="AND Gate" loc="(580,610)">
+      <a name="facing" val="east" />
+      <a name="width" val="1" />
+      <a name="size" val="30" />
+      <a name="inputs" val="2" />
+    </comp>
+    <comp lib="0" name="Text" loc="(363,265)">
+      <a name="text" val="10XX" />
+      <a name="font" val="SansSerif plain 12" />
+      <a name="halign" val="center" />
+      <a name="valign" val="base" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(110,350)">
+      <a name="facing" val="east" />
+      <a name="output" val="false" />
+      <a name="width" val="1" />
+      <a name="tristate" val="false" />
+      <a name="pull" val="none" />
+      <a name="label" val="1XXX (MSB)" />
+      <a name="labelloc" val="west" />
+      <a name="labelfont" val="SansSerif plain 12" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(110,380)">
+      <a name="facing" val="east" />
+      <a name="output" val="false" />
+      <a name="width" val="1" />
+      <a name="tristate" val="false" />
+      <a name="pull" val="none" />
+      <a name="label" val="X1XX" />
+      <a name="labelloc" val="west" />
+      <a name="labelfont" val="SansSerif plain 12" />
+    </comp>
+    <comp lib="0" name="Text" loc="(367,596)">
+      <a name="text" val="XX11" />
+      <a name="font" val="SansSerif plain 12" />
+      <a name="halign" val="center" />
+      <a name="valign" val="base" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(610,850)">
+      <a name="facing" val="west" />
+      <a name="output" val="true" />
+      <a name="width" val="1" />
+      <a name="tristate" val="true" />
+      <a name="pull" val="none" />
+      <a name="label" val="1101" />
+      <a name="labelloc" val="east" />
+      <a name="labelfont" val="SansSerif plain 12" />
+    </comp>
+    <comp lib="0" name="Text" loc="(363,204)">
+      <a name="text" val="01XX" />
+      <a name="font" val="SansSerif plain 12" />
+      <a name="halign" val="center" />
+      <a name="valign" val="base" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(610,430)">
+      <a name="facing" val="west" />
+      <a name="output" val="true" />
+      <a name="width" val="1" />
+      <a name="tristate" val="true" />
+      <a name="pull" val="none" />
+      <a name="label" val="0110" />
+      <a name="labelloc" val="east" />
+      <a name="labelfont" val="SansSerif plain 12" />
+    </comp>
+    <comp lib="1" name="AND Gate" loc="(580,70)">
+      <a name="facing" val="east" />
+      <a name="width" val="1" />
+      <a name="size" val="30" />
+      <a name="inputs" val="2" />
+    </comp>
+    <comp lib="1" name="AND Gate" loc="(580,190)">
       <a name="facing" val="east" />
       <a name="width" val="1" />
       <a name="size" val="30" />
@@ -1205,25 +1257,114 @@
       <a name="labelloc" val="east" />
       <a name="labelfont" val="SansSerif plain 12" />
     </comp>
+    <comp lib="0" name="Text" loc="(365,535)">
+      <a name="text" val="XX10" />
+      <a name="font" val="SansSerif plain 12" />
+      <a name="halign" val="center" />
+      <a name="valign" val="base" />
+    </comp>
+    <comp lib="1" name="NOT Gate" loc="(230,430)">
+      <a name="facing" val="east" />
+      <a name="width" val="1" />
+      <a name="size" val="20" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(110,440)">
+      <a name="facing" val="east" />
+      <a name="output" val="false" />
+      <a name="width" val="1" />
+      <a name="tristate" val="false" />
+      <a name="pull" val="none" />
+      <a name="label" val="XXX1 (LSB)" />
+      <a name="labelloc" val="west" />
+      <a name="labelfont" val="SansSerif plain 12" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(610,250)">
+      <a name="facing" val="west" />
+      <a name="output" val="true" />
+      <a name="width" val="1" />
+      <a name="tristate" val="true" />
+      <a name="pull" val="none" />
+      <a name="label" val="0011" />
+      <a name="labelloc" val="east" />
+      <a name="labelfont" val="SansSerif plain 12" />
+    </comp>
+    <comp lib="1" name="AND Gate" loc="(580,790)">
+      <a name="facing" val="east" />
+      <a name="width" val="1" />
+      <a name="size" val="30" />
+      <a name="inputs" val="2" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(610,610)">
+      <a name="facing" val="west" />
+      <a name="output" val="true" />
+      <a name="width" val="1" />
+      <a name="tristate" val="true" />
+      <a name="pull" val="none" />
+      <a name="label" val="1001" />
+      <a name="labelloc" val="east" />
+      <a name="labelfont" val="SansSerif plain 12" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(610,310)">
+      <a name="facing" val="west" />
+      <a name="output" val="true" />
+      <a name="width" val="1" />
+      <a name="tristate" val="true" />
+      <a name="pull" val="none" />
+      <a name="label" val="0100" />
+      <a name="labelloc" val="east" />
+      <a name="labelfont" val="SansSerif plain 12" />
+    </comp>
+    <comp lib="1" name="AND Gate" loc="(580,130)">
+      <a name="facing" val="east" />
+      <a name="width" val="1" />
+      <a name="size" val="30" />
+      <a name="inputs" val="2" />
+    </comp>
     <comp lib="1" name="AND Gate" loc="(380,440)">
       <a name="facing" val="east" />
       <a name="width" val="1" />
       <a name="size" val="30" />
       <a name="inputs" val="2" />
     </comp>
-    <comp lib="0" name="Text" loc="(363,145)">
-      <a name="text" val="00XX" />
+    <comp lib="0" name="Text" loc="(366,475)">
+      <a name="text" val="XX01" />
       <a name="font" val="SansSerif plain 12" />
       <a name="halign" val="center" />
       <a name="valign" val="base" />
     </comp>
-    <comp lib="0" name="Text" loc="(364,323)">
-      <a name="text" val="11XX" />
-      <a name="font" val="SansSerif plain 12" />
-      <a name="halign" val="center" />
-      <a name="valign" val="base" />
+    <comp lib="1" name="AND Gate" loc="(380,500)">
+      <a name="facing" val="east" />
+      <a name="width" val="1" />
+      <a name="size" val="30" />
+      <a name="inputs" val="2" />
     </comp>
-    <comp lib="1" name="AND Gate" loc="(580,790)">
+    <comp lib="0" name="Pin" loc="(610,550)">
+      <a name="facing" val="west" />
+      <a name="output" val="true" />
+      <a name="width" val="1" />
+      <a name="tristate" val="true" />
+      <a name="pull" val="none" />
+      <a name="label" val="1000" />
+      <a name="labelloc" val="east" />
+      <a name="labelfont" val="SansSerif plain 12" />
+    </comp>
+    <comp lib="1" name="AND Gate" loc="(580,910)">
+      <a name="facing" val="east" />
+      <a name="width" val="1" />
+      <a name="size" val="30" />
+      <a name="inputs" val="2" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(610,490)">
+      <a name="facing" val="west" />
+      <a name="output" val="true" />
+      <a name="width" val="1" />
+      <a name="tristate" val="true" />
+      <a name="pull" val="none" />
+      <a name="label" val="0111" />
+      <a name="labelloc" val="east" />
+      <a name="labelfont" val="SansSerif plain 12" />
+    </comp>
+    <comp lib="1" name="AND Gate" loc="(580,310)">
       <a name="facing" val="east" />
       <a name="width" val="1" />
       <a name="size" val="30" />
@@ -1239,8 +1380,18 @@
       <a name="labelloc" val="east" />
       <a name="labelfont" val="SansSerif plain 12" />
     </comp>
-    <comp lib="0" name="Text" loc="(363,204)">
-      <a name="text" val="01XX" />
+    <comp lib="0" name="Pin" loc="(610,970)">
+      <a name="facing" val="west" />
+      <a name="output" val="true" />
+      <a name="width" val="1" />
+      <a name="tristate" val="true" />
+      <a name="pull" val="none" />
+      <a name="label" val="1111" />
+      <a name="labelloc" val="east" />
+      <a name="labelfont" val="SansSerif plain 12" />
+    </comp>
+    <comp lib="0" name="Text" loc="(363,145)">
+      <a name="text" val="00XX" />
       <a name="font" val="SansSerif plain 12" />
       <a name="halign" val="center" />
       <a name="valign" val="base" />
@@ -1251,19 +1402,19 @@
       <a name="size" val="30" />
       <a name="inputs" val="2" />
     </comp>
-    <comp lib="1" name="AND Gate" loc="(380,350)">
+    <comp lib="1" name="AND Gate" loc="(380,170)">
       <a name="facing" val="east" />
       <a name="width" val="1" />
       <a name="size" val="30" />
       <a name="inputs" val="2" />
     </comp>
-    <comp lib="0" name="Pin" loc="(110,380)">
+    <comp lib="0" name="Pin" loc="(110,320)">
       <a name="facing" val="east" />
       <a name="output" val="false" />
       <a name="width" val="1" />
       <a name="tristate" val="false" />
       <a name="pull" val="none" />
-      <a name="label" val="X1XX" />
+      <a name="label" val="CLOCK" />
       <a name="labelloc" val="west" />
       <a name="labelfont" val="SansSerif plain 12" />
     </comp>
@@ -1273,71 +1424,24 @@
       <a name="size" val="30" />
       <a name="inputs" val="2" />
     </comp>
-    <comp lib="0" name="Pin" loc="(110,440)">
+    <comp name="quad pulse-triggered D flip-flop" loc="(170,380)">
       <a name="facing" val="east" />
-      <a name="output" val="false" />
-      <a name="width" val="1" />
-      <a name="tristate" val="false" />
-      <a name="pull" val="none" />
-      <a name="label" val="XXX1 (LSB)" />
-      <a name="labelloc" val="west" />
-      <a name="labelfont" val="SansSerif plain 12" />
     </comp>
-    <comp lib="0" name="Pin" loc="(610,310)">
-      <a name="facing" val="west" />
-      <a name="output" val="true" />
-      <a name="width" val="1" />
-      <a name="tristate" val="true" />
-      <a name="pull" val="none" />
-      <a name="label" val="0100" />
-      <a name="labelloc" val="east" />
-      <a name="labelfont" val="SansSerif plain 12" />
-    </comp>
-    <comp lib="0" name="Pin" loc="(610,550)">
-      <a name="facing" val="west" />
-      <a name="output" val="true" />
-      <a name="width" val="1" />
-      <a name="tristate" val="true" />
-      <a name="pull" val="none" />
-      <a name="label" val="1000" />
-      <a name="labelloc" val="east" />
-      <a name="labelfont" val="SansSerif plain 12" />
-    </comp>
-    <comp lib="0" name="Text" loc="(363,265)">
-      <a name="text" val="10XX" />
-      <a name="font" val="SansSerif plain 12" />
-      <a name="halign" val="center" />
-      <a name="valign" val="base" />
-    </comp>
-    <comp lib="1" name="AND Gate" loc="(580,670)">
+    <comp lib="1" name="AND Gate" loc="(380,350)">
       <a name="facing" val="east" />
       <a name="width" val="1" />
       <a name="size" val="30" />
       <a name="inputs" val="2" />
     </comp>
-    <comp lib="1" name="AND Gate" loc="(580,490)">
+    <comp lib="1" name="NOT Gate" loc="(230,380)">
       <a name="facing" val="east" />
       <a name="width" val="1" />
-      <a name="size" val="30" />
-      <a name="inputs" val="2" />
+      <a name="size" val="20" />
     </comp>
-    <comp lib="1" name="AND Gate" loc="(580,130)">
+    <comp lib="1" name="NOT Gate" loc="(230,410)">
       <a name="facing" val="east" />
       <a name="width" val="1" />
-      <a name="size" val="30" />
-      <a name="inputs" val="2" />
-    </comp>
-    <comp lib="0" name="Text" loc="(367,596)">
-      <a name="text" val="XX11" />
-      <a name="font" val="SansSerif plain 12" />
-      <a name="halign" val="center" />
-      <a name="valign" val="base" />
-    </comp>
-    <comp lib="1" name="AND Gate" loc="(580,610)">
-      <a name="facing" val="east" />
-      <a name="width" val="1" />
-      <a name="size" val="30" />
-      <a name="inputs" val="2" />
+      <a name="size" val="20" />
     </comp>
     <comp lib="0" name="Pin" loc="(610,790)">
       <a name="facing" val="west" />
@@ -1349,77 +1453,21 @@
       <a name="labelloc" val="east" />
       <a name="labelfont" val="SansSerif plain 12" />
     </comp>
-    <comp lib="1" name="NOT Gate" loc="(230,430)">
-      <a name="facing" val="east" />
-      <a name="width" val="1" />
-      <a name="size" val="20" />
-    </comp>
-    <comp lib="0" name="Pin" loc="(610,850)">
+    <comp lib="0" name="Pin" loc="(610,730)">
       <a name="facing" val="west" />
       <a name="output" val="true" />
       <a name="width" val="1" />
       <a name="tristate" val="true" />
       <a name="pull" val="none" />
-      <a name="label" val="1101" />
+      <a name="label" val="1011" />
       <a name="labelloc" val="east" />
       <a name="labelfont" val="SansSerif plain 12" />
     </comp>
-    <comp lib="1" name="AND Gate" loc="(380,230)">
-      <a name="facing" val="east" />
-      <a name="width" val="1" />
-      <a name="size" val="30" />
-      <a name="inputs" val="2" />
-    </comp>
-    <comp lib="1" name="NOT Gate" loc="(230,410)">
-      <a name="facing" val="east" />
-      <a name="width" val="1" />
-      <a name="size" val="20" />
-    </comp>
-    <comp lib="0" name="Pin" loc="(610,370)">
-      <a name="facing" val="west" />
-      <a name="output" val="true" />
-      <a name="width" val="1" />
-      <a name="tristate" val="true" />
-      <a name="pull" val="none" />
-      <a name="label" val="0101" />
-      <a name="labelloc" val="east" />
-      <a name="labelfont" val="SansSerif plain 12" />
-    </comp>
-    <comp lib="0" name="Pin" loc="(610,490)">
-      <a name="facing" val="west" />
-      <a name="output" val="true" />
-      <a name="width" val="1" />
-      <a name="tristate" val="true" />
-      <a name="pull" val="none" />
-      <a name="label" val="0111" />
-      <a name="labelloc" val="east" />
-      <a name="labelfont" val="SansSerif plain 12" />
-    </comp>
-    <comp lib="0" name="Text" loc="(364,418)">
-      <a name="text" val="XX00" />
+    <comp lib="0" name="Text" loc="(364,323)">
+      <a name="text" val="11XX" />
       <a name="font" val="SansSerif plain 12" />
       <a name="halign" val="center" />
       <a name="valign" val="base" />
-    </comp>
-    <comp lib="0" name="Pin" loc="(610,430)">
-      <a name="facing" val="west" />
-      <a name="output" val="true" />
-      <a name="width" val="1" />
-      <a name="tristate" val="true" />
-      <a name="pull" val="none" />
-      <a name="label" val="0110" />
-      <a name="labelloc" val="east" />
-      <a name="labelfont" val="SansSerif plain 12" />
-    </comp>
-    <comp lib="0" name="Pin" loc="(610,250)">
-      <a name="facing" val="west" />
-      <a name="output" val="true" />
-      <a name="width" val="1" />
-      <a name="tristate" val="true" />
-      <a name="pull" val="none" />
-      <a name="label" val="0011" />
-      <a name="labelloc" val="east" />
-      <a name="labelfont" val="SansSerif plain 12" />
     </comp>
   </circuit>
 </project>

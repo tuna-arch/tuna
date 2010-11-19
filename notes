@@ -1,0 +1,11 @@
+<duckinator> basically, you store in some sort of memory the commands you want
+<duckinator> (obviously)
+<sdkmvx> but where is the flow control
+<duckinator> hang on hang on
+<duckinator> and, unless you use jmp, it goes through the commands one after another, 12 bits at a time
+<duckinator> it just does that, there's no branching or anything
+<duckinator> sdkmvx: think brainfuck, change the loops to jmps and memory locations to registers
+<duckinator> (basically)
+<sdkmvx> yeah I guess
+<duckinator> i think it could actually be actually used as a real computer, even if it runs at the speed of a turtle on it's back
+<sdkmvx> wouldn't be fast, but that's not what we're going for
