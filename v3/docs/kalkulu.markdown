@@ -22,6 +22,7 @@ For each instruction it does the following:
 4. Raise the `SEND` lead, which tells the system to send the values from `CMD`, `IN1`, `IN2` to the corresponding multiplexers.
 
 The `FLAG` register stores information from the output of the last instruction:
+
     | bit # | name   | value                                       |
     ================================================================
     | ---X  | status | 1 if instruction is successful, 0 otherwise |
