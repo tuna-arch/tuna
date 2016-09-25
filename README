@@ -1,7 +1,5 @@
-Kalkulu is a processor design made by Nick Markwell (duckinator).
+Kalkulu is a processor design made by Ellen Dash (duckinator).
 
-I had design help from Martin Brandenburg (sdkmvx), Scott Olson (scott) and a few other people on irc.ninthbit.net for earlier versions.
+I had design help from Martin Brandenburg (sdkmvx), Scott Olson (scott) and a few other people for earlier versions.
 
 Schematics are created using logisim, which is available at http://ozark.hendrix.edu/~burch/logisim/
-
-The design is fully custom.
