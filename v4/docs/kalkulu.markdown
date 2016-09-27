@@ -11,11 +11,11 @@ The registers may optionally be cached, making them quicker to access than RAM.
 
 The `FLAGS` register stores information from the output of the last instruction:
 
-    | bit #      | name   | value                                  |
-    ================================================================
-    | ---- ---x  | carry  | 1 if carry required                    |
-    | ---- --x-  | zero   | 1 if last instruction equated to zero  |
-    | rest       |        | reserved                               |
+| bit #      | name   | value                                  |
+|------------|--------|----------------------------------------|
+| ---- ---x  | carry  | 1 if carry required                    |
+| ---- --x-  | zero   | 1 if last instruction equated to zero  |
+| rest       |        | reserved                               |
 
 
 All commands are formatted as follows, with unused operands set to zero:
@@ -26,53 +26,53 @@ The first four bits of the opcode are modifiers, the second four bits are the ac
 
 Modifiers:
 
-    | bit   | name    | purpose
-    ==============================
-    | x---  |         | reserved  |
-    | -x--  |         | reserved  |
-    | --x-  |         | reserved  |
-    | ---x  | pointer | designates whether the operand is an address to retrieve the value from. 0 = value, 1 = pointer. |
+| bit   | name    | purpose   |
+|-------|---------|-----------|
+| x---  |         | reserved  |
+| -x--  |         | reserved  |
+| --x-  |         | reserved  |
+| ---x  | pointer | designates whether the operand is an address to retrieve the value from. 0 = value, 1 = pointer. |
 
 ## Opcodes/operands and what they do
 
 Each opcode only requires one implementation; the Pointer modifier changes the behavior of the fetcher stage, and is completely transparent to the rest of the system.
 
-    | Modifier | Opcode | Operand              | Expression                                       |
-    ===============================================================================================
-    | 0000     | 0000   | mov   ADDR1, VALUE   | ADDR1 = VALUE                                    |
-    | 0001     | 0000   | movp  ADDR1, ADDR2   | ADDR1 = value of ADDR2                           |
-    |                                                                                             |
-    | 0000     | 0001   | add   ADDR1, VALUE   | OUT = ADDR1 + VALUE                              |
-    | 0001     | 0001   | addp  ADDR1, ADDR2   | OUT = ADDR1 + value of ADDR2                     |
-    |                                                                                             |
-    | 0000     | 0010   | nand  ADDR1, VALUE   | OUT = ADDR1 nand VALUE                           |
-    | 0001     | 0010   | nandp ADDR1, ADDR2   | OUT = ADDR1 nand (value of ADDR2)                |
-    |                                                                                             |
-    | 0000     | 0011   | xor   ADDR1, VALUE   | OUT = ADDR1 xor VALUE                            |
-    | 0001     | 0011   | xorp  ADDR1, ADDR2   | OUT = ADDR1 xor (value of ADDR2)                 |
-    |                                                                                             |
-    | 0000     | 0100   | shl   ADDR1, VALUE   | OUT = ADDR1 << VALUE                             |
-    | 0001     | 0100   | shlp  ADDR1, ADDR2   | OUT = ADDR1 << (value of ADDR2)                  |
-    |                                                                                             |
-    | 0000     | 0101   | shr   ADDR1, VALUE   | OUT = ADDR2 >> VALUE                             |
-    | 0001     | 0101   | shrp  ADDR1, ADDR2   | OUT = ADDR2 >> (value of ADDR2)                  |
-    |                                                                                             |
-    |          | 0110   | jz    ADDR1          | jump to ADDR1 if zero flag is set                |
-    |                                                                                             |
-    | 0000     | 0111   | lt    ADDR1, VALUE   | status flag = ADDR1 < ADDR2                      |
-    | 0001     | 0111   | lt    ADDR1, ADDR2   | status flag = ADDR1 < (value of ADDR2)           |
-    |                                                                                             |
-    | 0000     | 1000   | gt    ADDR1, VALUE   | status flag = ADDR1 > ADDR2                      |
-    | 0001     | 1000   | gt    ADDR1, ADDR2   | status flag = ADDR1 > (value of ADDR2)           |
-    |                                                                                             |
-    |          | 1101   | iret                 | return from interrupt                            |
-    |                                                                                             |
-    | 0000     | 1110   | in     VALUE         | OUT = read port number specified by VALUE        |
-    | 0001     | 1110   | inp    ADDR1         | OUT = read port number specified in ADDR1        |
-    |                                                                                             |
-    | 0000     | 1111   | out    ADDR1, VALUE  | write value in ADDR1 to port specified by VALUE  |
-    | 0001     | 1111   | outp   ADDR1, ADDR2  | write value in ADDR1 to port specified in ADDR2  |
-    
+| Modifier | Opcode | Operand              | Expression                                       |
+|----------|--------|----------------------|--------------------------------------------------|
+| 0000     | 0000   | mov   ADDR1, VALUE   | ADDR1 = VALUE                                    |
+| 0001     | 0000   | movp  ADDR1, ADDR2   | ADDR1 = value of ADDR2                           |
+|          |        |                      |                                                  |
+| 0000     | 0001   | add   ADDR1, VALUE   | OUT = ADDR1 + VALUE                              |
+| 0001     | 0001   | addp  ADDR1, ADDR2   | OUT = ADDR1 + value of ADDR2                     |
+|          |        |                      |                                                  |
+| 0000     | 0010   | nand  ADDR1, VALUE   | OUT = ADDR1 nand VALUE                           |
+| 0001     | 0010   | nandp ADDR1, ADDR2   | OUT = ADDR1 nand (value of ADDR2)                |
+|          |        |                      |                                                  |
+| 0000     | 0011   | xor   ADDR1, VALUE   | OUT = ADDR1 xor VALUE                            |
+| 0001     | 0011   | xorp  ADDR1, ADDR2   | OUT = ADDR1 xor (value of ADDR2)                 |
+|          |        |                      |                                                  |
+| 0000     | 0100   | shl   ADDR1, VALUE   | OUT = ADDR1 << VALUE                             |
+| 0001     | 0100   | shlp  ADDR1, ADDR2   | OUT = ADDR1 << (value of ADDR2)                  |
+|          |        |                      |                                                  |
+| 0000     | 0101   | shr   ADDR1, VALUE   | OUT = ADDR2 >> VALUE                             |
+| 0001     | 0101   | shrp  ADDR1, ADDR2   | OUT = ADDR2 >> (value of ADDR2)                  |
+|          |        |                      |                                                  |
+|          | 0110   | jz    ADDR1          | jump to ADDR1 if zero flag is set                |
+|          |        |                      |                                                  |
+| 0000     | 0111   | lt    ADDR1, VALUE   | status flag = ADDR1 < ADDR2                      |
+| 0001     | 0111   | lt    ADDR1, ADDR2   | status flag = ADDR1 < (value of ADDR2)           |
+|          |        |                      |                                                  |
+| 0000     | 1000   | gt    ADDR1, VALUE   | status flag = ADDR1 > ADDR2                      |
+| 0001     | 1000   | gt    ADDR1, ADDR2   | status flag = ADDR1 > (value of ADDR2)           |
+|          |        |                      |                                                  |
+|          | 1101   | iret                 | return from interrupt                            |
+|          |        |                      |                                                  |
+| 0000     | 1110   | in     VALUE         | OUT = read port number specified by VALUE        |
+| 0001     | 1110   | inp    ADDR1         | OUT = read port number specified in ADDR1        |
+|          |        |                      |                                                  |
+| 0000     | 1111   | out    ADDR1, VALUE  | write value in ADDR1 to port specified by VALUE  |
+| 0001     | 1111   | outp   ADDR1, ADDR2  | write value in ADDR1 to port specified in ADDR2  |
+
 ### "Missing" opcodes
 
     not ADDR1
