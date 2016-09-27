@@ -94,18 +94,17 @@ Each opcode only requires one implementation; the Pointer modifier changes the b
     jmp ADDR1
         mov FLAGS, 0b00000010 # Set zero flag.
         jz ADDR1              # Jump if zero flag is set.
-    
-    eq ADDR1, ADDR2 # Compare two addresses.
-    jne ADDR3       # Then jump to the third if they're not equal.
-        # Subtract ADDR2 from ADDR1
-            nand ADDR2, ADDR2 # NOT <value of ADDR2>
-            add OUT, 1        # 2's compliment (negate, add 1 to subtract)
-            addp ADDR1, OUT   # ADD <value of ADDR1>
-        # At this point, the zero flag is set to 0 if they're equal.
-        jz ADDR3 # Jump if not equal.
-    
+
     sub ADDR1, ADDR2
         nand ADDR2, ADDR2   # NOT <value of ADDR2>
         add OUT, 1          # 2's compliment (negate, add 1 to subtract)
         addp ADDR1, OUT     # ADD <value of ADDR1>
 
+    eq ADDR1, ADDR2 # Compare two addresses.
+    je ADDR3       # Then jump to the third if they're not equal.
+        # Subtract ADDR2 from ADDR1
+            nand ADDR2, ADDR2 # NOT <value of ADDR2>
+            add OUT, 1        # 2's compliment (negate, add 1 to subtract)
+            addp ADDR1, OUT   # ADD <value of ADDR1>
+        # At this point, the zero flag is set to 0 if they're equal.
+        jz ADDR3 # Jump if equal.
