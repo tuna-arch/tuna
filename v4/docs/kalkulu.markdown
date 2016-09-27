@@ -2,12 +2,11 @@
 
 ## Registers
 
-Each 8-byte (64-bit) chunk of RAM is treated as a register.
+Each 1-byte (8-bit) chunk of RAM is treated as a register.
 
-`0x00`-`0x08` (first 8 bytes) is reserved as the `OUT` register, which contains the results for any non-destructive operations (undefined otherwise).
-`0x08`-`0x10` (second 8 bytes) is reserved as the `FLAGS` register, which stores information about the last operation.
-
-The registers may optionally be cached, making them quicker to access than RAM.
+* 0x0 (the first byte) is reserved as the `OUT` register, which contains the results for any non-destructive operations (undefined otherwise).
+* 0x1 (the second byte) is reserved as the `FLAGS` register, which stores information about the last ALU operation (undefined for non-ALU operations).
+* 0x2-0x8 should treated as registers (r1-r7). Since registers are just a chunk of RAM, there is no hardware implications for this &mdash; only software implications. See [#Booting](#Booting) for details.
 
 The `FLAGS` register stores information from the output of the last instruction:
 
@@ -108,3 +107,31 @@ Each opcode only requires one implementation; the Pointer modifier changes the b
             addp ADDR1, OUT   # ADD <value of ADDR1>
         # At this point, the zero flag is set to 0 if they're equal.
         jz ADDR3 # Jump if equal.
+
+## Registers and Booting
+
+**The entire hardware initialization sequence is to set the instruction pointer to zero prior to fetching the first instruction.**
+
+With Kalkulu, "registers" are simply assembly shorthands for single-byte chunks of RAM. That is,
+
+| Register name | Memory address |
+----------------------------------
+| OUT           | 0x0            |
+| FLAGS         | 0x1            |
+| r1            | 0x2            |
+| r2            | 0x3            |
+| r3            | 0x4            |
+| ...           |                |
+| r7            | 0x8            |
+
+However, excluding OUT and FLAGS, there is _no special hardware treatment required for this_. They are simply _assumed_ to be available: the assembler will provide the r1-r7 shorthands, and software will use them as general purpose registers.
+
+The fact that the first 9 bytes of RAM are used for this means the initial program the computer loads should start with the following:
+
+```
+mov FLAGS, 0b00000010 # Set zero flag.
+jz 0x9                # Jump to 0x9.
+mov OUT, OUT          # No-op.
+```
+
+This reserves space for OUT, FLAGS, and 7 general-purpose registers.
