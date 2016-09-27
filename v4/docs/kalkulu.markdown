@@ -115,7 +115,7 @@ Each opcode only requires one implementation; the Pointer modifier changes the b
 With Kalkulu, "registers" are simply assembly shorthands for single-byte chunks of RAM. That is,
 
 | Register name | Memory address |
-----------------------------------
+|---------------|----------------|
 | OUT           | 0x0            |
 | FLAGS         | 0x1            |
 | r1            | 0x2            |
