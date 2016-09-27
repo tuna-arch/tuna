@@ -11,12 +11,11 @@ The registers may optionally be cached, making them quicker to access than RAM.
 
 The `FLAGS` register stores information from the output of the last instruction:
 
-    | bit # | name   | value                                       |
+    | bit #      | name   | value                                  |
     ================================================================
-    | X---  | status | 1 if instruction is successful, 0 otherwise |
-    | -X--  | carry  | 1 if carry required                         |
-    | --X-  | zero   | 1 if last instruction equated to zero       |
-    | rest  |        | reserved                                    |
+    | ---- ---x  | carry  | 1 if carry required                    |
+    | ---- --x-  | zero   | 1 if last instruction equated to zero  |
+    | rest       |        | reserved                               |
 
 
 All commands are formatted as follows, with unused operands set to zero:
@@ -29,10 +28,10 @@ Modifiers:
 
     | bit   | name    | purpose
     ==============================
-    | X---  |         | reserved  |
-    | -X--  |         | reserved  |
-    | --X-  |         | reserved  |
-    | ---X  | pointer | designates whether the operand is an address to retrieve the value from. 0 = value, 1 = pointer. |
+    | x---  |         | reserved  |
+    | -x--  |         | reserved  |
+    | --x-  |         | reserved  |
+    | ---x  | pointer | designates whether the operand is an address to retrieve the value from. 0 = value, 1 = pointer. |
 
 ## Opcodes/operands and what they do
 
@@ -77,11 +76,11 @@ Each opcode only requires one implementation; the Pointer modifier changes the b
 ### "Missing" opcodes
 
     not ADDR1
-        xor ADDR1, 0b11111111
+        nand ADDR1, ADDR1
 
     and ADDR1, VALUE
         nand ADDR1, VALUE
-        xor OUT, 0b11111111 ; NOT OUT
+        nand OUT, OUT # NOT OUT
 
     or ADDR1, VALUE
         movp  REG1, ADDR1
@@ -91,16 +90,22 @@ Each opcode only requires one implementation; the Pointer modifier changes the b
         nandp REG2, REG2
         movp  REG2, OUT
         nandp REG1, REG2
-        
 
     jmp ADDR1
-        or FLAGS, 0b0100
-        jz ADDR1
+        mov FLAGS, 0b00000010 # Set zero flag.
+        jz ADDR1              # Jump if zero flag is set.
     
-    eq ADDR1, ADDR2
-        xorp ADDR1, ADDR2 # Zero flag indicates 
-        movp OUT, FLAGS:2 # Manually set OUT register to the value of the Zero flag.
+    eq ADDR1, ADDR2 # Compare two addresses.
+    jne ADDR3       # Then jump to the third if they're not equal.
+        # Subtract ADDR2 from ADDR1
+            nand ADDR2, ADDR2 # NOT <value of ADDR2>
+            add OUT, 1        # 2's compliment (negate, add 1 to subtract)
+            addp ADDR1, OUT   # ADD <value of ADDR1>
+        # At this point, the zero flag is set to 0 if they're equal.
+        jz ADDR3 # Jump if not equal.
     
     sub ADDR1, ADDR2
-        xor ADDR1, 0b11111111 ; NOT 
-        addp ADDR1, OUT
+        nand ADDR2, ADDR2   # NOT <value of ADDR2>
+        add OUT, 1          # 2's compliment (negate, add 1 to subtract)
+        addp ADDR1, OUT     # ADD <value of ADDR1>
+
