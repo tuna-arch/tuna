@@ -62,8 +62,6 @@ Each opcode only requires one implementation; the Pointer modifier changes the b
 | 0001     | 0111   | gt    ADDR1, ADDR2   | status flag = ADDR1 > (value of ADDR2)           |
 |          |        |                      |                                                  |
 |          |        |                      |                                                  |
-|          | 1101   | iret                 | return from interrupt                            |
-|          |        |                      |                                                  |
 | 0000     | 1110   | in     VALUE         | OUT = read port number specified by VALUE        |
 | 0001     | 1110   | inp    ADDR1         | OUT = read port number specified in ADDR1        |
 |          |        |                      |                                                  |
