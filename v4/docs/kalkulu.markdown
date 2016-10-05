@@ -34,7 +34,7 @@ Modifiers:
 
 ## Opcodes/operands and what they do
 
-Each opcode only requires one implementation; the Pointer modifier changes the behavior of the fetcher stage, and is completely transparent to the rest of the system.
+Each opcode only requires one implementation; the Pointer modifier changes the behavior of the fetcher stage, and is completely transparent to the rest of the system. The general layout is `opcode destination, source_or_value`.
 
 | Modifier | Opcode | Operand              | Expression                                       |
 |----------|--------|----------------------|--------------------------------------------------|
@@ -65,8 +65,8 @@ Each opcode only requires one implementation; the Pointer modifier changes the b
 | 0000     | 1110   | in     VALUE         | OUT = read port number specified by VALUE        |
 | 0001     | 1110   | inp    ADDR1         | OUT = read port number specified in ADDR1        |
 |          |        |                      |                                                  |
-| 0000     | 1111   | out    ADDR1, VALUE  | write value in ADDR1 to port specified by VALUE  |
-| 0001     | 1111   | outp   ADDR1, ADDR2  | write value in ADDR1 to port specified in ADDR2  |
+| 0000     | 1111   | out    ADDR1, VALUE  | write VALUE to port specified by ADDR1           |
+| 0001     | 1111   | outp   ADDR1, ADDR2  | write value in ADDR2 to port specified by ADDR1  |
 
 ### "Missing" opcodes
 
