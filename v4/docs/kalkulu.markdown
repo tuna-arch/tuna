@@ -47,22 +47,20 @@ Each opcode only requires one implementation; the Pointer modifier changes the b
 | 0000     | 0010   | nand  ADDR1, VALUE   | OUT = ADDR1 nand VALUE                           |
 | 0001     | 0010   | nandp ADDR1, ADDR2   | OUT = ADDR1 nand (value of ADDR2)                |
 |          |        |                      |                                                  |
-| 0000     | 0011   | xor   ADDR1, VALUE   | OUT = ADDR1 xor VALUE                            |
-| 0001     | 0011   | xorp  ADDR1, ADDR2   | OUT = ADDR1 xor (value of ADDR2)                 |
+| 0000     | 0011   | shl   ADDR1, VALUE   | OUT = ADDR1 << VALUE                             |
+| 0001     | 0011   | shlp  ADDR1, ADDR2   | OUT = ADDR1 << (value of ADDR2)                  |
 |          |        |                      |                                                  |
-| 0000     | 0100   | shl   ADDR1, VALUE   | OUT = ADDR1 << VALUE                             |
-| 0001     | 0100   | shlp  ADDR1, ADDR2   | OUT = ADDR1 << (value of ADDR2)                  |
+| 0000     | 0100   | shr   ADDR1, VALUE   | OUT = ADDR2 >> VALUE                             |
+| 0001     | 0100   | shrp  ADDR1, ADDR2   | OUT = ADDR2 >> (value of ADDR2)                  |
 |          |        |                      |                                                  |
-| 0000     | 0101   | shr   ADDR1, VALUE   | OUT = ADDR2 >> VALUE                             |
-| 0001     | 0101   | shrp  ADDR1, ADDR2   | OUT = ADDR2 >> (value of ADDR2)                  |
+|          | 0101   | jz    ADDR1          | jump to ADDR1 if zero flag is set                |
 |          |        |                      |                                                  |
-|          | 0110   | jz    ADDR1          | jump to ADDR1 if zero flag is set                |
+| 0000     | 0110   | lt    ADDR1, VALUE   | status flag = ADDR1 < ADDR2                      |
+| 0001     | 0110   | lt    ADDR1, ADDR2   | status flag = ADDR1 < (value of ADDR2)           |
 |          |        |                      |                                                  |
-| 0000     | 0111   | lt    ADDR1, VALUE   | status flag = ADDR1 < ADDR2                      |
-| 0001     | 0111   | lt    ADDR1, ADDR2   | status flag = ADDR1 < (value of ADDR2)           |
+| 0000     | 0111   | gt    ADDR1, VALUE   | status flag = ADDR1 > ADDR2                      |
+| 0001     | 0111   | gt    ADDR1, ADDR2   | status flag = ADDR1 > (value of ADDR2)           |
 |          |        |                      |                                                  |
-| 0000     | 1000   | gt    ADDR1, VALUE   | status flag = ADDR1 > ADDR2                      |
-| 0001     | 1000   | gt    ADDR1, ADDR2   | status flag = ADDR1 > (value of ADDR2)           |
 |          |        |                      |                                                  |
 |          | 1101   | iret                 | return from interrupt                            |
 |          |        |                      |                                                  |
