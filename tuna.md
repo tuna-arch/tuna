@@ -1,6 +1,20 @@
-# Kalkulu
+# Tuna v1.0
 
-## Registers
+Tuna is a computer architecture designed by [Ellen
+Dash](https://puppy.technology). It is designed with the end goal of
+implementing a system using mostly or exclusively TTL chips and, as
+such, aims to be simple to implement.
+
+Work on the architecture began in August 2010. It went through rapid
+development until mid-2011, when it was largely abandoned due to lack of
+knowledge about architecture design. After (part of an) online course
+and various research, work began again in September 2016.
+
+v1.0 finalized October 10, 2016.
+
+## System Architecture
+
+### Registers
 
 Each 1-byte (8-bit) chunk of RAM is treated as a register.
 
@@ -32,7 +46,7 @@ Modifiers:
 | --x-  |         | reserved  |
 | ---x  | pointer | designates whether the operand is an address to retrieve the value from. 0 = value, 1 = pointer. |
 
-## Opcodes/operands and what they do
+### Opcodes/operands and what they do
 
 Each opcode only requires one implementation; the Pointer modifier changes the behavior of the fetcher stage, and is completely transparent to the rest of the system. The general layout is `opcode destination, source_or_value`.
 
@@ -68,7 +82,7 @@ Each opcode only requires one implementation; the Pointer modifier changes the b
 | 0000     | 1111   | out    ADDR1, VALUE  | write VALUE to port specified by ADDR1           |
 | 0001     | 1111   | outp   ADDR1, ADDR2  | write value in ADDR2 to port specified by ADDR1  |
 
-### "Missing" opcodes
+#### "Missing" opcodes
 
     not ADDR1
         nand ADDR1, ADDR1
@@ -104,11 +118,11 @@ Each opcode only requires one implementation; the Pointer modifier changes the b
         # At this point, the zero flag is set to 0 if they're equal.
         jz ADDR3 # Jump if equal.
 
-## Registers and Booting
+### Registers and Booting
 
 **The entire hardware initialization sequence is to set the instruction pointer to zero prior to fetching the first instruction.**
 
-With Kalkulu, "registers" are simply assembly shorthands for single-byte chunks of RAM. That is,
+Within this architecture, "registers" are simply assembly shorthands for single-byte chunks of RAM. That is,
 
 | Register name | Memory address |
 |---------------|----------------|
