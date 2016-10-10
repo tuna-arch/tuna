@@ -10,8 +10,6 @@ development until mid-2011, when it was largely abandoned due to lack of
 knowledge about architecture design. After (part of an) online course
 and various research, work began again in September 2016.
 
-v1.0 finalized October 10, 2016.
-
 ## System Architecture
 
 ### Registers
