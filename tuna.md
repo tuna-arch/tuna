@@ -1,14 +1,10 @@
 # Tuna v1.0
 
-Tuna is a computer architecture designed by [Ellen
-Dash](https://puppy.technology). It is designed with the end goal of
-implementing a system using mostly or exclusively TTL chips and, as
-such, aims to be simple to implement.
+A simple computer architecture.
 
-Work on the architecture began in August 2010. It went through rapid
-development until mid-2011, when it was largely abandoned due to lack of
-knowledge about architecture design. After (part of an) online course
-and various research, work began again in September 2016.
+Designed by [Ellen Dash](https://puppy.technology).
+
+The latest version of this document can be found at https://github.com/tuna-isa/tuna/blob/master/tuna.md.
 
 ## System Architecture
 
