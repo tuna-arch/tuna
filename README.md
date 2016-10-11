@@ -10,7 +10,11 @@ development until mid-2011, when it was largely abandoned due to lack of
 knowledge about architecture design. After (part of an) online course
 and various research, work began again in September 2016.
 
-The document defining the architecture is [tuna.md](tuna.md).
+Files:
+
+* [1_hardware.md](1_hardware.md): Designing hardware for the Tuna architecture.
+* [2_isa.md](2_isa.md): Tuna Instruction Set Architecture design.
+* [3_software.md](3_software.md): Designing software for the Tuna architecture.
 
 # Development
 
