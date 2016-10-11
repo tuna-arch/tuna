@@ -148,7 +148,7 @@ Each opcode only requires one implementation; the Pointer modifier changes the b
 
 The entire hardware initialization consists of:
 
-* A implementation-specific method for loading the initial program into memory at address 0x0.
+* An implementation-specific method for loading the initial program into memory at address 0x0.
 * Setting the Program Counter to 0 (zero).
 * Beginning to fetch and execute instructions.
 
