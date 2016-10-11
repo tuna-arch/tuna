@@ -11,9 +11,11 @@ The latest version of this document can be found at https://github.com/tuna-arch
 
 ## System Architecture
 
-The system has a designated register size &mdash; also known as the `WORD` size. This can be e.g. 8-bit, 16-bit, 32-bit, etc. The register size determines amount of addressable RAM, because it determines the largest address that can be referenced &mdash; e.g., 8-bit registers can only store addresses 0x0 to 0xFF (0 to 255) and 16-bit registers can only store addresses 0x0 to 0xFFFF (0 to 65536).
+The system has a designated register size &mdash; also known as the `WORD` size. This can be e.g. 8-bit, 16-bit, 32-bit, etc. The register size determines amount of addressable RAM, because it determines the largest address that can be referenced.
 
-An 8-bit system can address 256 bytes of RAM, a 16-bit system can address approximately 65 kilobytes of RAM, a 32-bit system can address approximately 4 gigabytes of RAM, etc. **_Word size is distinct from how much RAM the system actually has._**
+E.g., 8-bit registers can only store addresses 0x0 to 0xFF (256 bytes of RAM), 16-bit registers can only store addresses 0x0 to 0xFFFF (approximately 65 kilobytes of RAM), and 32-bit registers can only store addresses 0x0 to 0xFFFFFFFF (approximately 4 gigabytes of RAM).
+
+**_Word size is distinct from how much RAM the system actually has._**
 
 ### Registers
 
