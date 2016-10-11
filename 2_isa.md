@@ -1,6 +1,7 @@
 # Tuna Instruction Set Architecture
 
-A simple computer architecture.
+See [README.md](https://github.com/tuna-arch/tuna/blob/master/README.md)
+for a more high-level discussion of the architecture.
 
 Designed by [Ellen Dash](http://puppy.technology).
 
