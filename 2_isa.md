@@ -3,7 +3,7 @@
 See [README.md](https://github.com/tuna-arch/tuna/blob/master/README.md)
 for a more high-level discussion of the architecture.
 
-Designed by [Ellen Dash](http://puppy.technology).
+Written by [Ellen Dash](http://puppy.technology).
 
 The latest version of this document can be found at https://github.com/tuna-arch/tuna/blob/master/2_isa.md.
 
