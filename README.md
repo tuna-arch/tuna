@@ -12,6 +12,8 @@ and various research, work began again in September 2016.
 
 Files:
 
+* [links.md](links.md): A collection of links I found useful when
+  working on Tuna.
 * [1_hardware.md](1_hardware.md): Designing hardware for the Tuna architecture.
 * [2_isa.md](2_isa.md): Tuna Instruction Set Architecture design.
 * [3_software.md](3_software.md): Designing software for the Tuna architecture.
