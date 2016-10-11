@@ -1,12 +1,12 @@
-# Tuna Architecture v1.0
+# Tuna Instruction Set Architecture
 
 A simple computer architecture.
 
 Designed by [Ellen Dash](http://puppy.technology).
 
-The latest version of this document can be found at https://github.com/tuna-arch/tuna/blob/master/tuna.md.
+The latest version of this document can be found at https://github.com/tuna-arch/tuna/blob/master/2_isa.md.
 
-[Tuna Architecture v1.0](https://github.com/tuna-arch/tuna/blob/master/tuna.md) by [Ellen Dash](http://puppy.technology) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+[Tuna Instruction Set Architecture](https://github.com/tuna-arch/tuna/blob/master/2_isa.md) by [Ellen Dash](http://puppy.technology) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
 ## System Architecture
 
