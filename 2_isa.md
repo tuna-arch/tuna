@@ -13,14 +13,23 @@ The latest version of this document can be found at https://github.com/tuna-arch
 
 The system has a designated register size &mdash; also known as the `WORD` size. This can be e.g. 8-bit, 16-bit, 32-bit, etc. The register size determines amount of addressable RAM, because it determines the largest address that can be referenced.
 
-E.g., 8-bit registers can only store addresses 0x0 to 0xFF (256 bytes of RAM), 16-bit registers can only store addresses 0x0 to 0xFFFF (approximately 65 kilobytes of RAM), and 32-bit registers can only store addresses 0x0 to 0xFFFFFFFF (approximately 4 gigabytes of RAM).
+E.g.,
+
+* 8-bit registers can store addresses 0x0 to 0xFF (256 bytes of RAM),
+* 16-bit registers can store addresses 0x0 to 0xFFFF (approximately 65 kilobytes of RAM),
+* 32-bit registers can store addresses 0x0 to 0xFFFFFFFF (approximately 4 gigabytes of RAM).
 
 **_Word size is distinct from how much RAM the system actually has._**
 
 ### Registers
 
-Each register is one word wide. E.g., on 8-bit systems the registers are 0x0, 0x1, 0x2, etc; but on 16-bit systems they would be 0x0, 0x2, 0x4, etc; on 32-bit systems they would be 0x0, 0x4, 0x8; and so on.
+Each register is one word wide.
 
+E.g.,
+
+* on 8-bit systems the registers are 0x0, 0x1, 0x2, etc;
+* on 16-bit systems they would be 0x0, 0x2, 0x4, etc;
+* on 32-bit systems they would be 0x0, 0x4, 0x8, etc.
 
 | Register name | Memory address           | Purpose |
 |---------------|--------------------------|-------------------
@@ -132,7 +141,7 @@ Each opcode only requires one implementation; the Pointer modifier changes the b
         # At this point, the zero flag is set to 0 if they're equal.
         jz ADDR3 # Jump if equal.
 
-### Registers and Booting
+### Booting
 
 The entire hardware initialization consists of:
 
