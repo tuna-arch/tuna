@@ -38,13 +38,13 @@ E.g.,
 |---------------|-----------------|-----------------------------------------------------------------------------------------|
 | OUT           | 0x0 * WORD_SIZE | Contains results for non-destructive operations (undefined otherwise).                  |
 | FLAGS         | 0x1 * WORD_SIZE | Contains information about the last ALU operation (undefined after non-ALU operations). |
-| r1            | 0x2 * WORD_SIZE | General purpose register.                                                               |
-| r2            | 0x3 * WORD_SIZE | General purpose register.                                                               |
-| r3            | 0x4 * WORD_SIZE | General purpose register.                                                               |
-| r4            | 0x5 * WORD_SIZE | General purpose register.                                                               |
-| r5            | 0x6 * WORD_SIZE | General purpose register.                                                               |
-| r6            | 0x7 * WORD_SIZE | General purpose register.                                                               |
-| r7            | 0x8 * WORD_SIZE | General purpose register.                                                               |
+| r0            | 0x2 * WORD_SIZE | General purpose register.                                                               |
+| r1            | 0x3 * WORD_SIZE | General purpose register.                                                               |
+| r2            | 0x4 * WORD_SIZE | General purpose register.                                                               |
+| r3            | 0x5 * WORD_SIZE | General purpose register.                                                               |
+| r4            | 0x6 * WORD_SIZE | General purpose register.                                                               |
+| r5            | 0x7 * WORD_SIZE | General purpose register.                                                               |
+| r6            | 0x8 * WORD_SIZE | General purpose register.                                                               |
 
 Since registers are just a chunk of RAM, there is no hardware implications for this &mdash; only software implications. See [#booting](#booting) for details.
 
