@@ -11,7 +11,7 @@ The latest version of this document can be found at https://github.com/tuna-arch
 
 ## System Architecture
 
-The system has a designated register size &mdash; also known as the `WORD` size. This can be e.g. 8-bit, 16-bit, 32-bit, etc. The register size determines amount of addressable RAM, because it determines the largest address that can be referenced.
+The system has a designated register size &mdash; also known as the word size. This can be e.g. 8-bit, 16-bit, 32-bit, etc. The register size determines amount of addressable RAM, because it determines the largest address that can be referenced.
 
 E.g.,
 
@@ -20,6 +20,8 @@ E.g.,
 * 32-bit registers can store addresses 0x0 to 0xFFFFFFFF (approximately 4 gigabytes of RAM).
 
 **_Word size is distinct from how much RAM the system actually has._**
+
+For the rest of the document, and in the assembler, `WORD_SIZE` is defined as the word size in bytes.
 
 ### Registers
 
@@ -31,17 +33,18 @@ E.g.,
 * on 16-bit systems they would be 0x0, 0x2, 0x4, etc;
 * on 32-bit systems they would be 0x0, 0x4, 0x8, etc.
 
-| Register name | Memory address           | Purpose |
-|---------------|--------------------------|-------------------
-| OUT           | 0x0 * WORD size in bytes | Contains results for non-destructive operations (undefined otherwise).           |
-| FLAGS         | 0x1 * WORD size in bytes | Contains information about the last ALU operation (undefined after non-ALU ops). |
-| r1            | 0x2 * WORD size in bytes | General purpose register.                                                        |
-| r2            | 0x3 * WORD size in bytes | General purpose register.                                                        |
-| r3            | 0x4 * WORD size in bytes | General purpose register.                                                        |
-| r4            | 0x5 * WORD size in bytes | General purpose register.                                                        |
-| r5            | 0x6 * WORD size in bytes | General purpose register.                                                        |
-| r6            | 0x7 * WORD size in bytes | General purpose register.                                                        |
-| r7            | 0x8 * WORD size in bytes | General purpose register.                                                        |
+
+| Register name | Memory address  | Purpose                                                                          |
+|---------------|-----------------|----------------------------------------------------------------------------------|
+| OUT           | 0x0 * WORD_SIZE | Contains results for non-destructive operations (undefined otherwise).           |
+| FLAGS         | 0x1 * WORD_SIZE | Contains information about the last ALU operation (undefined after non-ALU ops). |
+| r1            | 0x2 * WORD_SIZE | General purpose register.                                                        |
+| r2            | 0x3 * WORD_SIZE | General purpose register.                                                        |
+| r3            | 0x4 * WORD_SIZE | General purpose register.                                                        |
+| r4            | 0x5 * WORD_SIZE | General purpose register.                                                        |
+| r5            | 0x6 * WORD_SIZE | General purpose register.                                                        |
+| r6            | 0x7 * WORD_SIZE | General purpose register.                                                        |
+| r7            | 0x8 * WORD_SIZE | General purpose register.                                                        |
 
 Since registers are just a chunk of RAM, there is no hardware implications for this &mdash; only software implications. See [#Booting](#Booting) for details.
 
