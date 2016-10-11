@@ -11,30 +11,45 @@ The latest version of this document can be found at https://github.com/tuna-arch
 
 ## System Architecture
 
+The system has a designated register size &mdash; also known as the `WORD` size. This can be e.g. 8-bit, 16-bit, 32-bit, etc. The register size determines amount of addressable RAM, because it determines the largest address that can be referenced &mdash; e.g., 8-bit registers can only store addresses 0x0 to 0xFF (0 to 255) and 16-bit registers can only store addresses 0x0 to 0xFFFF (0 to 65536).
+
+An 8-bit system can address 256 bytes of RAM, a 16-bit system can address approximately 65 kilobytes of RAM, a 32-bit system can address approximately 4 gigabytes of RAM, etc. **_Word size is distinct from how much RAM the system actually has._**
+
 ### Registers
 
-Each 1-byte (8-bit) chunk of RAM is treated as a register.
+Each register is one word wide. E.g., on 8-bit systems the registers are 0x0, 0x1, 0x2, etc; but on 16-bit systems they would be 0x0, 0x2, 0x4, etc; on 32-bit systems they would be 0x0, 0x4, 0x8; and so on.
 
-* 0x0 (the first byte) is reserved as the `OUT` register, which contains the results for any non-destructive operations (undefined otherwise).
-* 0x1 (the second byte) is reserved as the `FLAGS` register, which stores information about the last ALU operation (undefined for non-ALU operations).
-* 0x2-0x8 should treated as registers (r1-r7). Since registers are just a chunk of RAM, there is no hardware implications for this &mdash; only software implications. See [#Booting](#Booting) for details.
 
-The `FLAGS` register stores information from the output of the last instruction:
+| Register name | Memory address           | Purpose |
+|---------------|--------------------------|-------------------
+| OUT           | 0x0 * WORD size in bytes | Contains results for non-destructive operations (undefined otherwise).           |
+| FLAGS         | 0x1 * WORD size in bytes | Contains information about the last ALU operation (undefined after non-ALU ops). |
+| r1            | 0x2 * WORD size in bytes | General purpose register.                                                        |
+| r2            | 0x3 * WORD size in bytes | General purpose register.                                                        |
+| r3            | 0x4 * WORD size in bytes | General purpose register.                                                        |
+| r4            | 0x5 * WORD size in bytes | General purpose register.                                                        |
+| r5            | 0x6 * WORD size in bytes | General purpose register.                                                        |
+| r6            | 0x7 * WORD size in bytes | General purpose register.                                                        |
+| r7            | 0x8 * WORD size in bytes | General purpose register.                                                        |
 
-| bit #      | name   | value                                  |
-|------------|--------|----------------------------------------|
-| ---- ---x  | carry  | 1 if carry required                    |
-| ---- --x-  | zero   | 1 if last instruction equated to zero  |
-| rest       |        | reserved                               |
+Since registers are just a chunk of RAM, there is no hardware implications for this &mdash; only software implications. See [#Booting](#Booting) for details.
+
+The `FLAGS` register stores information from the output of the last ALU operation:
+
+| bit # | name   | value                                  |
+|-------|--------|----------------------------------------|
+| ---x  | carry  | 1 if carry required                    |
+| --x-  | zero   | 1 if last instruction equated to zero  |
+| rest  |        | reserved                               |
 
 
 All commands are formatted as follows, with unused operands set to zero:
 
-    [8-bit opcode][8-bit operand][8-bit operand]
+    [WORD-sized opcode][WORD-sized operand][WORD-sized operand]
 
-The first four bits of the opcode are modifiers, the second four bits are the actual opcode.
+The last 4 bits of the opcode determine the actual operation. The rest are modifiers.
 
-Modifiers:
+Modifiers, truncated to 4 bits for brevity (since all of the bits before that are also reserved):
 
 | bit   | name    | purpose   |
 |-------|---------|-----------|
@@ -117,28 +132,18 @@ Each opcode only requires one implementation; the Pointer modifier changes the b
 
 ### Registers and Booting
 
-**The entire hardware initialization sequence is to set the instruction pointer to zero prior to fetching the first instruction.**
+The entire hardware initialization consists of:
 
-Within this architecture, "registers" are simply assembly shorthands for single-byte chunks of RAM. That is,
+* A implementation-specific method for loading the initial program into memory at address 0x0.
+* Setting the Program Counter to 0 (zero).
+* Beginning to fetch and execute instructions.
 
-| Register name | Memory address |
-|---------------|----------------|
-| OUT           | 0x0            |
-| FLAGS         | 0x1            |
-| r1            | 0x2            |
-| r2            | 0x3            |
-| r3            | 0x4            |
-| ...           |                |
-| r7            | 0x8            |
-
-However, excluding OUT and FLAGS, there is _no special hardware treatment required for this_. They are simply _assumed_ to be available: the assembler will provide the r1-r7 shorthands, and software will use them as general purpose registers.
-
-The fact that the first 9 bytes of RAM are used for this means the initial program the computer loads should start with the following:
+The fact that the first 9 words of RAM are used as registers means the initial program the computer loads should function even if those values change, which can be achieved with the following:
 
 ```
-mov FLAGS, 0b00000010 # Set zero flag.
-jz 0x9                # Jump to 0x9.
-mov OUT, OUT          # No-op.
+mov FLAGS, 0b00000010 # Set zero flag.               (Location of registers 0-2.)
+jz 0x9 * WORD_SIZE    # Jump to after the registers. (Location of registers 3-5.)
+mov OUT, OUT          # No-op.                       (Location of registers 5-8.)
 ```
 
 This reserves space for OUT, FLAGS, and 7 general-purpose registers.
