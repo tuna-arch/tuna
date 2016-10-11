@@ -46,7 +46,7 @@ E.g.,
 | r6            | 0x7 * WORD_SIZE | General purpose register.                                                               |
 | r7            | 0x8 * WORD_SIZE | General purpose register.                                                               |
 
-Since registers are just a chunk of RAM, there is no hardware implications for this &mdash; only software implications. See [#Booting](#Booting) for details.
+Since registers are just a chunk of RAM, there is no hardware implications for this &mdash; only software implications. See [#booting](#booting) for details.
 
 The `FLAGS` register stores information from the output of the last ALU operation:
 
