@@ -18,6 +18,11 @@ Files:
 * [2_isa.md](2_isa.md): Tuna Instruction Set Architecture design.
 * [3_software.md](3_software.md): Designing software for the Tuna architecture.
 
+# Tools
+
+* 16-bit assembler: [school](https://github.com/tuna-arch/school)
+* 16-bit emulator: [escolar](https://github.com/tuna-arch/escolar)
+
 # Development
 
 ???
