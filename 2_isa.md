@@ -11,13 +11,9 @@ The latest version of this document can be found at https://github.com/tuna-arch
 
 ## System Architecture
 
-The system has a designated register size &mdash; also known as the word size. It must be 16 bits or larger. This can be e.g. 16-bit, 32-bit, etc. The register size determines amount of addressable RAM, because it determines the largest address that can be referenced.
+The system has a designated register size &mdash; also known as the word size. It must be 16 bits or larger. This can be e.g. 16-bit, 32-bit, etc.
 
-E.g.,
-
-* 8-bit registers can store addresses 0x0 to 0xFF (256 bytes of RAM),
-* 16-bit registers can store addresses 0x0 to 0xFFFF (approximately 65 kilobytes of RAM),
-* 32-bit registers can store addresses 0x0 to 0xFFFFFFFF (approximately 4 gigabytes of RAM).
+TODO: Investigate memory segmentation and such.
 
 **_Word size is distinct from how much RAM the system actually has._**
 
@@ -29,25 +25,21 @@ Values are stored as big endian.
 
 Each register is one word wide.
 
-E.g.,
+TODO: Investiage implications memory segmentation, if I add it, and such has on register layout.
+TODO: Determine how many registers would actually be necessary for this ISA to not be a piece of shit. 
 
-* on 16-bit systems they would be 0x0, 0x2, 0x4, etc;
-* on 32-bit systems they would be 0x0, 0x4, 0x8, etc.
+| Register name | Purpose                                                                                 |
+|---------------|-----------------------------------------------------------------------------------------|
+| OUT    (r0)   | Contains results for non-destructive operations (undefined otherwise).                  |
+| FLAGS  (r1)   | Contains information about the last ALU operation (undefined after non-ALU operations). |
+| r2            | General purpose register.                                                               |
+| r3            | General purpose register.                                                               |
+| r4            | General purpose register.                                                               |
+| r5            | General purpose register.                                                               |
+| r6            | General purpose register.                                                               |
+| r7            | General purpose register.                                                               |
 
-
-| Register name | Memory address  | Purpose                                                                                 |
-|---------------|-----------------|-----------------------------------------------------------------------------------------|
-| OUT           | 0x0 * WORD_SIZE | Contains results for non-destructive operations (undefined otherwise).                  |
-| FLAGS         | 0x1 * WORD_SIZE | Contains information about the last ALU operation (undefined after non-ALU operations). |
-| r0            | 0x2 * WORD_SIZE | General purpose register.                                                               |
-| r1            | 0x3 * WORD_SIZE | General purpose register.                                                               |
-| r2            | 0x4 * WORD_SIZE | General purpose register.                                                               |
-| r3            | 0x5 * WORD_SIZE | General purpose register.                                                               |
-| r4            | 0x6 * WORD_SIZE | General purpose register.                                                               |
-| r5            | 0x7 * WORD_SIZE | General purpose register.                                                               |
-| r6            | 0x8 * WORD_SIZE | General purpose register.                                                               |
-
-Since registers are just a chunk of RAM, there is no hardware implications for this &mdash; only software implications. See [#booting](#booting) for details.
+TODO: Determine if registers should be set to any specific value at boot, or if we can bullshit it and set everything manually in software.
 
 The `FLAGS` register stores information from the output of the last ALU operation:
 
@@ -75,7 +67,15 @@ Modifiers, truncated to 4 bits for brevity (since all of the bits before that ar
 
 ### Opcodes/operands and what they do
 
-Each opcode only requires one implementation; the Pointer modifier changes the behavior of the fetcher stage, and is completely transparent to the rest of the system. The general layout is `opcode destination, source_or_value`.
+The general layout is `opcode destination, source_or_value`.
+
+| Opcode | Example              | Expression                                       |
+|--------|----------------------|--------------------------------------------------|
+| 0001   | loadi REG1,  VALUE   | register REG = VALUE
+| 0010   | store ADDR1, REG1    | ADDR1 = value of REG1
+| 0001   | 
+| 0010   | add   REG1, REG2     | 
+| 1000   | load  REG1,  ADDR1   | register REG1 = value of ADDR1
 
 | Modifier | Opcode | Operand              | Expression                                       |
 |----------|--------|----------------------|--------------------------------------------------|
