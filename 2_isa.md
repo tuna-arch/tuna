@@ -35,19 +35,17 @@ E.g.,
 * on 32-bit systems they would be 0x0, 0x4, 0x8, etc.
 
 
-| Register name | Memory address  | Purpose                                                                                 |
-|---------------|-----------------|-----------------------------------------------------------------------------------------|
-| OUT           | 0x0 * WORD_SIZE | Contains results for non-destructive operations (undefined otherwise).                  |
-| FLAGS         | 0x1 * WORD_SIZE | Contains information about the last ALU operation (undefined after non-ALU operations). |
-| r0            | 0x2 * WORD_SIZE | General purpose register.                                                               |
-| r1            | 0x3 * WORD_SIZE | General purpose register.                                                               |
-| r2            | 0x4 * WORD_SIZE | General purpose register.                                                               |
-| r3            | 0x5 * WORD_SIZE | General purpose register.                                                               |
-| r4            | 0x6 * WORD_SIZE | General purpose register.                                                               |
-| r5            | 0x7 * WORD_SIZE | General purpose register.                                                               |
-| r6            | 0x8 * WORD_SIZE | General purpose register.                                                               |
-
-Since registers are just a chunk of RAM, there is no hardware implications for this &mdash; only software implications. See [#booting](#booting) for details.
+| Register name | Purpose                                                                                 |
+|---------------|-----------------------------------------------------------------------------------------|
+| r0 (OUT)      | Contains results for non-destructive operations (unchanged otherwise).                  |
+| r1 (FLAGS)    | Contains information about the last ALU operation (not modified by non-ALU operations). |
+| r2            | General purpose register.                                                               |
+| r3            | General purpose register.                                                               |
+| r4            | General purpose register.                                                               |
+| r5            | General purpose register.                                                               |
+| r6            | General purpose register.                                                               |
+| r7            | General purpose register.                                                               |
+| r8            | General purpose register.                                                               |
 
 The `FLAGS` register stores information from the output of the last ALU operation:
 
@@ -60,56 +58,32 @@ The `FLAGS` register stores information from the output of the last ALU operatio
 
 All commands are formatted as follows, with unused operands set to zero:
 
-    [WORD-sized opcode][WORD-sized operand][WORD-sized operand]
+    [Immediate Modifier][Opcode][WORD-sized Operand][WORD-sized Operand]
 
-The last 4 bits of the opcode determine the actual operation. The rest are modifiers.
-
-Modifiers, truncated to 4 bits for brevity (since all of the bits before that are also reserved):
-
-| bit   | name    | purpose   |
-|-------|---------|-----------|
-| x---  |         | reserved  |
-| -x--  |         | reserved  |
-| --x-  |         | reserved  |
-| ---x  | pointer | designates whether the operand is an address to retrieve the value from. 0 = value, 1 = pointer. |
+The Immediate Modifier affects the behavior of the fetcher stage, and is completely transparent to the rest of the system. If it is 1, the last operand is treated as a value. If it is 0, the last operand is treated as a reference to a register.
 
 ### Opcodes/operands and what they do
 
-Each opcode only requires one implementation; the Pointer modifier changes the behavior of the fetcher stage, and is completely transparent to the rest of the system. The general layout is `opcode destination, source_or_value`.
+Each opcode only requires one implementation; the Immediate Modifier changes the behavior of the fetcher stage, and is completely transparent to the rest of the system. The general layout is `opcode destination, source_or_value`.
 
-| Modifier | Opcode | Operand              | Expression                                       |
-|----------|--------|----------------------|--------------------------------------------------|
-| 0000     | 0000   | mov   ADDR1, VALUE   | ADDR1 = VALUE                                    |
-| 0001     | 0000   | movp  ADDR1, ADDR2   | ADDR1 = value of ADDR2                           |
-|          |        |                      |                                                  |
-| 0000     | 0001   | add   ADDR1, VALUE   | OUT = ADDR1 + VALUE                              |
-| 0001     | 0001   | addp  ADDR1, ADDR2   | OUT = ADDR1 + value of ADDR2                     |
-|          |        |                      |                                                  |
-| 0000     | 0010   | nand  ADDR1, VALUE   | OUT = ADDR1 nand VALUE                           |
-| 0001     | 0010   | nandp ADDR1, ADDR2   | OUT = ADDR1 nand (value of ADDR2)                |
-|          |        |                      |                                                  |
-| 0000     | 0011   | shl   ADDR1, VALUE   | OUT = ADDR1 << VALUE                             |
-| 0001     | 0011   | shlp  ADDR1, ADDR2   | OUT = ADDR1 << (value of ADDR2)                  |
-|          |        |                      |                                                  |
-| 0000     | 0100   | shr   ADDR1, VALUE   | OUT = ADDR2 >> VALUE                             |
-| 0001     | 0100   | shrp  ADDR1, ADDR2   | OUT = ADDR2 >> (value of ADDR2)                  |
-|          |        |                      |                                                  |
-|          | 0101   | jz    ADDR1          | jump to ADDR1 if zero flag is set                |
-|          |        |                      |                                                  |
-| 0000     | 0110   | lt    ADDR1, VALUE   | status flag = ADDR1 < ADDR2                      |
-| 0001     | 0110   | lt    ADDR1, ADDR2   | status flag = ADDR1 < (value of ADDR2)           |
-|          |        |                      |                                                  |
-| 0000     | 0111   | gt    ADDR1, VALUE   | status flag = ADDR1 > ADDR2                      |
-| 0001     | 0111   | gt    ADDR1, ADDR2   | status flag = ADDR1 > (value of ADDR2)           |
-|          |        |                      |                                                  |
-|          |        |                      |                                                  |
-| 0000     | 1110   | in     VALUE         | OUT = read port number specified by VALUE        |
-| 0001     | 1110   | inp    ADDR1         | OUT = read port number specified in ADDR1        |
-|          |        |                      |                                                  |
-| 0000     | 1111   | out    ADDR1, VALUE  | write VALUE to port specified by ADDR1           |
-| 0001     | 1111   | outp   ADDR1, ADDR2  | write value in ADDR2 to port specified by ADDR1  |
+| Opcode | Example              | Expression                                                             |
+|--------|----------------------|------------------------------------------------------------------------|
+| 0000   | store REG1, VALUE    | Store the value stored in REG2 into the memory address stored in REG1. |
+| 0001   | load  REG1, REG2     | Load the value of REG1 into REG1.  ???? NOT SURE IF THIS MAKES SENSE.  |
+| 0010   | mov   REG1, REG2     | Copy the value of REG2 to REG1.                                        |
+| 0011   | nand  REG1, REG2     | OUT = (value of REG1) nand (value of REG2)                             |
+| 0100   | shl   REG1, REG2     | OUT = (value of REG1) << (value of REG2)                               |
+| 0101   | shr   REG1, REG2     | OUT = (value of REG1) >> (value of REG2)                               |
+| 0110   | jz    REG1           | jump to the memory address stored in REG1 if zero flag is set.         |
+| 0111   | lt    REG1, REG2     | status flag = 1 if ADDR1 < ADDR2, 0 otherwise.                         |
+| 1000   | gt    REG1, REG2     | status flag = 1 if ADDR1 > ADDR2, 0 otherwise.                         |
+| | | TODO: FIGURE OUT I/O. |
+| 1110   | in     VALUE         | OUT = read port number specified by VALUE        |
+| 1111   | out    ADDR1, VALUE  | write VALUE to port specified by ADDR1           |
 
 #### "Missing" opcodes
+
+These should be macros (or similar) offered by the assembler/compiler, for convenience purposes.
 
     not ADDR1
         nand ADDR1, ADDR1
@@ -127,23 +101,23 @@ Each opcode only requires one implementation; the Pointer modifier changes the b
         movp  REG2, OUT
         nandp REG1, REG2
 
-    jmp ADDR1
+    jmp REG1
         mov FLAGS, 0b00000010 # Set zero flag.
-        jz ADDR1              # Jump if zero flag is set.
+        jz REG1               # Jump if zero flag is set.
 
     sub ADDR1, ADDR2
         nand ADDR2, ADDR2   # NOT <value of ADDR2>
         add OUT, 1          # 2's compliment (negate and add 1 to subtract)
         addp ADDR1, OUT     # ADD <value of ADDR1>
 
-    eq ADDR1, ADDR2 # Compare two addresses.
-    je ADDR3       # Then jump to the third if they're not equal.
-        # Subtract ADDR2 from ADDR1
-            nand ADDR2, ADDR2 # NOT <value of ADDR2>
-            add OUT, 1        # 2's compliment (negate and add 1 to subtract)
-            addp ADDR1, OUT   # ADD <value of ADDR1>
+    eq REG1, REG2 # Compare two addresses.
+    je REG3        # Then jump to the third if they're not equal.
+        # Subtract REG2 from REG2.
+            nand REG2, REG2 # NOT <value of ADDR2>
+            add  OUT,  1    # 2's compliment (negate and add 1 to subtract)
+            add  REG1, OUT  # ADD <value of ADDR1>
         # At this point, the zero flag is set to 0 if they're equal.
-        jz ADDR3 # Jump if equal.
+        jz REG3 # Jump if equal.
 
 ### Booting
 
@@ -153,12 +127,4 @@ The entire hardware initialization consists of:
 * Setting the Program Counter to 0 (zero).
 * Beginning to fetch and execute instructions.
 
-The fact that the first 9 words of RAM are used as registers means the initial program the computer loads should function even if those values change, which can be achieved with the following:
-
-```
-mov FLAGS, 0b00000010 # Set zero flag.               (Location of registers 0-2.)
-jz 0x9 * WORD_SIZE    # Jump to after the registers. (Location of registers 3-5.)
-mov OUT, OUT          # No-op.                       (Location of registers 5-8.)
-```
-
-This reserves space for OUT, FLAGS, and 7 general-purpose registers.
+Note: Registers won't be zeroed out at boot time.
