@@ -3,37 +3,38 @@
 See [README.md](https://github.com/tuna-arch/tuna/blob/master/README.md)
 for a more high-level discussion of the architecture.
 
-Written by [Ellen Dash](http://puppy.technology).
+Written by [Ellen Dash](https://smallest.dog).
 
 The latest version of this document can be found at https://github.com/tuna-arch/tuna/blob/master/2_isa.md.
 
-[Tuna Instruction Set Architecture](https://github.com/tuna-arch/tuna/blob/master/2_isa.md) by [Ellen Dash](http://puppy.technology) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+[Tuna Instruction Set Architecture](https://github.com/tuna-arch/tuna/blob/master/2_isa.md) by [Ellen Dash](https://smallest.dog) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
 ## System Architecture
 
-The system has a designated register size &mdash; also known as the word size. It must be 16 bits or larger. This can be e.g. 16-bit, 32-bit, etc. The register size determines amount of addressable RAM, because it determines the largest address that can be referenced.
+Tuna is a [big endian](https://en.wikipedia.org/wiki/Endianness#Big) [register memory architecture](https://en.wikipedia.org/wiki/Register_memory_architecture), designed so implementations can have varying register and address bus sizes.
+
+E.g., prototype/toy systems can have a 16-bit word size for simplicity, whereas more complex system can use a word size of 32 bits, 64 bits, or more, to work with efficiently larger numbers or accomodate more memory.
+
+### Memory
+
+The design in this document offers neither memory protection, virtual memory, nor segmentation. However, extensions can be made to the architecture to accomodate this. This document assumes there are no extensions related to memory.
+
+Without any architecture extensions, the amount of addressable memory is determined by the smallest of the register width and the address bus. That is, if the address bus is narrower than register width, then the address bus dictates the amount of addressable memory; otherwise, the register width dictates the amount of addressable memory.
+
+Register width is in powers of two &mdash; 16 bit, 32 bit, 64 bit, etc. 8 bit and smaller is not recommended, as the largest value an 8 bit register can store is 255.
 
 E.g.,
 
-* 8-bit registers can store addresses 0x0 to 0xFF (256 bytes of RAM),
 * 16-bit registers can store addresses 0x0 to 0xFFFF (approximately 65 kilobytes of RAM),
 * 32-bit registers can store addresses 0x0 to 0xFFFFFFFF (approximately 4 gigabytes of RAM).
 
-**_Word size is distinct from how much RAM the system actually has._**
+**_The amount of addressible RAM is distinct from how much RAM the system actually has._**
 
 For the rest of the document, and in the assembler, `WORD_SIZE` is defined as the word size in bytes.
 
-Values are stored as big endian.
-
 ### Registers
 
-Each register is one word wide.
-
-E.g.,
-
-* on 16-bit systems they would be 0x0, 0x2, 0x4, etc;
-* on 32-bit systems they would be 0x0, 0x4, 0x8, etc.
-
+See the [section on Memory](#Memory) for information on register size and handling memory addresses.
 
 | Register name | Purpose                                                                                 |
 |---------------|-----------------------------------------------------------------------------------------|
@@ -68,22 +69,23 @@ Each opcode only requires one implementation; the Immediate Modifier changes the
 
 | Opcode | Example              | Expression                                                             |
 |--------|----------------------|------------------------------------------------------------------------|
-| 0000   | store REG1, VALUE    | Store the value stored in REG2 into the memory address stored in REG1. |
-| 0001   | load  REG1, REG2     | Load the value of REG1 into REG1.  ???? NOT SURE IF THIS MAKES SENSE.  |
-| 0010   | mov   REG1, REG2     | Copy the value of REG2 to REG1.                                        |
-| 0011   | nand  REG1, REG2     | OUT = (value of REG1) nand (value of REG2)                             |
-| 0100   | shl   REG1, REG2     | OUT = (value of REG1) << (value of REG2)                               |
-| 0101   | shr   REG1, REG2     | OUT = (value of REG1) >> (value of REG2)                               |
-| 0110   | jz    REG1           | jump to the memory address stored in REG1 if zero flag is set.         |
-| 0111   | lt    REG1, REG2     | status flag = 1 if ADDR1 < ADDR2, 0 otherwise.                         |
-| 1000   | gt    REG1, REG2     | status flag = 1 if ADDR1 > ADDR2, 0 otherwise.                         |
-| | | TODO: FIGURE OUT I/O. |
+| 0000   | store REG1, REG2     | Store the value stored in REG2 into the memory address stored in REG1. |
+| 0001   | mov   REG1, REG2     | Copy the value of REG2 to REG1.                                        |
+| 0010   | nand  REG1, REG2     | OUT = (value of REG1) nand (value of REG2)                             |
+| 0011   | shl   REG1, REG2     | OUT = (value of REG1) << (value of REG2)                               |
+| 0100   | shr   REG1, REG2     | OUT = (value of REG1) >> (value of REG2)                               |
+| 0101   | jz    REG1           | jump to the memory address stored in REG1 if zero flag is set.         |
+| 0110   | lt    REG1, REG2     | status flag = 1 if ADDR1 < ADDR2, 0 otherwise.                         |
+| | | TODO: FIGURE OUT I/O. `in`/`out` were simply copy/pasted from an old design. |
 | 1110   | in     VALUE         | OUT = read port number specified by VALUE        |
 | 1111   | out    ADDR1, VALUE  | write VALUE to port specified by ADDR1           |
 
 #### "Missing" opcodes
 
 These should be macros (or similar) offered by the assembler/compiler, for convenience purposes.
+
+    gt REG1, REG2
+        lt REG2, REG1
 
     not ADDR1
         nand ADDR1, ADDR1
@@ -127,4 +129,4 @@ The entire hardware initialization consists of:
 * Setting the Program Counter to 0 (zero).
 * Beginning to fetch and execute instructions.
 
-Note: Registers won't be zeroed out at boot time.
+Note: Registers may not be zeroed out at boot time. You should do that manually.
