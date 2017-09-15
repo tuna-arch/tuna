@@ -98,6 +98,9 @@ Each opcode only requires one implementation; the Immediate Modifier changes the
 |  0   | 0110   | `lt    REG1, REG2    ` | status flag = 1 if (value of REG1) < (value of REG2), 0 otherwise.     |
 |  1   | 0110   | `lti   REG1, VALUE   ` | status flag = 1 if (value of REG1) < VALUE, 0 otherwise.               |
 |||||
+|  0   | 0111   | `add   REG1, REG2    ` | REG1 = (value of REG1) + (value of REG2)                               |
+|  1   | 0111   | `addi  REG1, VALUE   ` | REG1 = (value of REG1) + VALUE                                         |
+|||||
 |||| TODO: FIGURE OUT I/O. `in`/`out` are copypasta-edits.  |
 |  0   | 1110   | in     REG1, REG2      | Read port number specified in REG2 and put the value in REG1.          |
 |  1   | 1110   | in     REG1, VALUE     | Read port number specified in REG2 and put the value in REG1.          |
