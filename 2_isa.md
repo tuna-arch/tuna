@@ -99,8 +99,8 @@ Each opcode only requires one implementation; the Immediate Modifier changes the
 |  1   | 0110   | `lti   REG1, VALUE   ` | status flag = 1 if (value of REG1) < VALUE, 0 otherwise.               |
 |||||
 |||| TODO: FIGURE OUT I/O. `in`/`out` were simply copy/pasted from an old design. |
-| 1110   | in     VALUE         | OUT = read port number specified by VALUE        |
-| 1111   | out    ADDR1, VALUE  | write VALUE to port specified by ADDR1           |
+|      | 1110   | in     VALUE         | OUT = read port number specified by VALUE        |
+|      | 1111   | out    ADDR1, VALUE  | write VALUE to port specified by ADDR1           |
 
 #### "Missing" opcodes
 
