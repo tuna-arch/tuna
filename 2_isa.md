@@ -98,9 +98,12 @@ Each opcode only requires one implementation; the Immediate Modifier changes the
 |  0   | 0110   | `lt    REG1, REG2    ` | status flag = 1 if (value of REG1) < (value of REG2), 0 otherwise.     |
 |  1   | 0110   | `lti   REG1, VALUE   ` | status flag = 1 if (value of REG1) < VALUE, 0 otherwise.               |
 |||||
-|||| TODO: FIGURE OUT I/O. `in`/`out` were simply copy/pasted from an old design. |
-|      | 1110   | in     VALUE         | OUT = read port number specified by VALUE        |
-|      | 1111   | out    ADDR1, VALUE  | write VALUE to port specified by ADDR1           |
+|||| TODO: FIGURE OUT I/O. `in`/`out` are copypasta-edits.  |
+|  0   | 1110   | in     REG1, REG2      | Read port number specified in REG2 and put the value in REG1.          |
+|  1   | 1110   | in     REG1, VALUE     | Read port number specified in REG2 and put the value in REG1.          |
+|||||
+|  0   | 1111   | out    REG1, REG2      | Write (value of REG2) to port specified in REG1.     |
+|  1   | 1111   | out    REG1, VALUE     | Write VALUE to port specified in REG1.               |
 
 #### "Missing" opcodes
 
@@ -109,8 +112,8 @@ These should be macros (or similar) offered by the assembler/compiler, for conve
     gt REG1, REG2
         lt REG2, REG1
 
-    not ADDR1
-        nand ADDR1, ADDR1
+    not REG1
+        nand REG1, REG1
 
     ; TODO: This should PROBABLY be it's own instruction.
     and REG1, REG2
@@ -130,7 +133,7 @@ These should be macros (or similar) offered by the assembler/compiler, for conve
     sub REG1, REG2
         nand REG2, REG2   # NOT <value of REG2>
         addi REG2, 1      # 2's compliment (negate and add 1 to subtract)
-        add  REG1, REG2   # ADD <value of ADDR1>
+        add  REG1, REG2   # ADD <value of REG1> and put the result in REG1
 
     eq REG1, REG2  # Compare two addresses.
     je REG3        # Then jump to the third if they're not equal.
