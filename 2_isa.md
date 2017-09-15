@@ -5,7 +5,7 @@ for a more high-level discussion of the architecture.
 
 Written by [Ellen Dash](https://smallest.dog).
 
-The latest version of this document can be found at https://github.com/tuna-arch/tuna/blob/master/2_isa.md.
+The latest version of this document can be found at [https://github.com/tuna-arch/tuna/blob/master/2_isa.md](https://github.com/tuna-arch/tuna/blob/master/2_isa.md).
 
 [Tuna Instruction Set Architecture](https://github.com/tuna-arch/tuna/blob/master/2_isa.md) by [Ellen Dash](https://smallest.dog) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
@@ -13,7 +13,7 @@ The latest version of this document can be found at https://github.com/tuna-arch
 
 Tuna is a [big endian](https://en.wikipedia.org/wiki/Endianness#Big) [register memory architecture](https://en.wikipedia.org/wiki/Register_memory_architecture), designed so implementations can have varying register and address bus sizes.
 
-E.g., prototype/toy systems can have a 16-bit word size for simplicity, whereas more complex system can use a word size of 32 bits, 64 bits, or more, to work with efficiently larger numbers or accomodate more memory.
+E.g., prototype/toy systems can have a 16-bit word size for simplicity, whereas more complex system can use a word size of 32 bits, 64 bits, or more, to work efficiently with larger numbers or accomodate more memory.
 
 ### Memory
 
@@ -38,7 +38,7 @@ See the [section on Memory](#Memory) for information on register size and handli
 
 | Register name | Purpose                                                                                 |
 |---------------|-----------------------------------------------------------------------------------------|
-| r0 (OUT)      | Contains results for non-destructive operations (unchanged otherwise).                  |
+| r0 (PC)       | Program counter. Yes, you can modify this.                                              |
 | r1 (FLAGS)    | Contains information about the last ALU operation (not modified by non-ALU operations). |
 | r2            | General purpose register.                                                               |
 | r3            | General purpose register.                                                               |
@@ -47,6 +47,14 @@ See the [section on Memory](#Memory) for information on register size and handli
 | r6            | General purpose register.                                                               |
 | r7            | General purpose register.                                                               |
 | r8            | General purpose register.                                                               |
+| r9            | General purpose register.                                                               |
+| r10           | General purpose register.                                                               |
+| r11           | General purpose register.                                                               |
+| r12           | General purpose register.                                                               |
+| r13           | General purpose register.                                                               |
+| r14           | General purpose register.                                                               |
+| r15           | General purpose register.                                                               |
+| r16           | General purpose register.                                                               |
 
 The `FLAGS` register stores information from the output of the last ALU operation:
 
@@ -59,23 +67,37 @@ The `FLAGS` register stores information from the output of the last ALU operatio
 
 All commands are formatted as follows, with unused operands set to zero:
 
-    [Immediate Modifier][Opcode][WORD-sized Operand][WORD-sized Operand]
+    [Immediate Modifier][4-Bit Opcode][WORD-sized Operand][WORD-sized Operand]
 
 The Immediate Modifier affects the behavior of the fetcher stage, and is completely transparent to the rest of the system. If it is 1, the last operand is treated as a value. If it is 0, the last operand is treated as a reference to a register.
 
 ### Opcodes/operands and what they do
 
-Each opcode only requires one implementation; the Immediate Modifier changes the behavior of the fetcher stage, and is completely transparent to the rest of the system. The general layout is `opcode destination, source_or_value`.
+Each opcode only requires one implementation; the Immediate Modifier changes the behavior of the fetcher stage, and is completely transparent to the rest of the system. The general layout is `opcode destination, source`.
 
-| Opcode | Example              | Expression                                                             |
-|--------|----------------------|------------------------------------------------------------------------|
-| 0000   | store REG1, REG2     | Store the value stored in REG2 into the memory address stored in REG1. |
-| 0001   | mov   REG1, REG2     | Copy the value of REG2 to REG1.                                        |
-| 0010   | nand  REG1, REG2     | OUT = (value of REG1) nand (value of REG2)                             |
-| 0011   | shl   REG1, REG2     | OUT = (value of REG1) << (value of REG2)                               |
-| 0100   | shr   REG1, REG2     | OUT = (value of REG1) >> (value of REG2)                               |
-| 0101   | jz    REG1           | jump to the memory address stored in REG1 if zero flag is set.         |
-| 0110   | lt    REG1, REG2     | status flag = 1 if ADDR1 < ADDR2, 0 otherwise.                         |
+| I.M. | Opcode | Example                | Expression                                                             |
+|------|--------|------------------------|------------------------------------------------------------------------|
+|  0   | 0000   | `store  REG1, REG2   ` | Store the value stored in REG2 at the memory address stored in REG1.   |
+|  1   | 0000   | `storei REG1, VALUE  ` | Store VALUE at the memory address stored in REG1.                      |
+|||||
+|  0   | 0001   | `mov    REG1, REG2   ` | Copy the value of REG2 to REG1.                                        |
+|  1   | 0001   | `movi   REG1, VALUE  ` | Copy VALUE to REG1.                                                    |
+|||||
+|  0   | 0010   | `movz   REG1, REG2   ` | If the zero flag is set, copy the value of REG2 to REG1; otherwise, do nothing. |
+|  1   | 0010   | `movzi  REG1, VALUE  ` | If the zero flag is set, copy VALUE to REG1; otherwise, do nothing.             |
+|||||
+|  0   | 0011   | `nand  REG1, REG2    ` | REG = (value of REG1) nand (value of REG2)                             |
+|  1   | 0011   | `nandi REG1, VALUE   ` | REG = (value of REG1) nand VALUE                                       |
+|||||
+|  0   | 0100   | `shl   REG1, REG2    ` | REG1 = (value of REG1) << (value of REG2)                              |
+|  1   | 0100   | `shli  REG1, VALUE   ` | REG1 = (value of REG1) << VALUE                                        |
+|||||
+|  0   | 0101   | `shr   REG1, REG2    ` | REG1 = (value of REG1) >> (value of REG2)                              |
+|  1   | 0101   | `shri  REG1, VALUE   ` | REG1 = (value of REG1) >> VALUE                                        |
+|||||
+|  0   | 0110   | `lt    REG1, REG2    ` | status flag = 1 if (value of REG1) < (value of REG2), 0 otherwise.     |
+|  1   | 0110   | `lti   REG1, VALUE   ` | status flag = 1 if (value of REG1) < VALUE, 0 otherwise.               |
+|||||
 | | | TODO: FIGURE OUT I/O. `in`/`out` were simply copy/pasted from an old design. |
 | 1110   | in     VALUE         | OUT = read port number specified by VALUE        |
 | 1111   | out    ADDR1, VALUE  | write VALUE to port specified by ADDR1           |
@@ -90,36 +112,34 @@ These should be macros (or similar) offered by the assembler/compiler, for conve
     not ADDR1
         nand ADDR1, ADDR1
 
-    and ADDR1, VALUE
-        nand ADDR1, VALUE
-        nand OUT, OUT # NOT OUT
+    ; TODO: This should PROBABLY be it's own instruction.
+    and REG1, REG2
+        nand REG1, REG2
+        nand REG1, REG1
 
-    or ADDR1, VALUE
-        movp  REG1, ADDR1
-        mov   REG2, VALUE
-        nandp REG1, REG1
-        movp  REG1, OUT
-        nandp REG2, REG2
-        movp  REG2, OUT
-        nandp REG1, REG2
+    ; TODO: This should PROBABLY be it's own instruction.
+    or REG1, REG2
+        nand  REG1, REG1
+        nand  REG2, REG2
+        nand  REG1, REG2
 
     jmp REG1
-        mov FLAGS, 0b00000010 # Set zero flag.
-        jz REG1               # Jump if zero flag is set.
+        mov  PC, REG1
 
-    sub ADDR1, ADDR2
-        nand ADDR2, ADDR2   # NOT <value of ADDR2>
-        add OUT, 1          # 2's compliment (negate and add 1 to subtract)
-        addp ADDR1, OUT     # ADD <value of ADDR1>
+    ; TODO: ???
+    sub REG1, REG2
+        nand REG2, REG2   # NOT <value of REG2>
+        addi REG2, 1      # 2's compliment (negate and add 1 to subtract)
+        add  REG1, REG2   # ADD <value of ADDR1>
 
-    eq REG1, REG2 # Compare two addresses.
+    eq REG1, REG2  # Compare two addresses.
     je REG3        # Then jump to the third if they're not equal.
         # Subtract REG2 from REG2.
-            nand REG2, REG2 # NOT <value of ADDR2>
-            add  OUT,  1    # 2's compliment (negate and add 1 to subtract)
-            add  REG1, OUT  # ADD <value of ADDR1>
+            nand REG2, REG2 # NOT <value of REG2>
+            add  REG2, 1    # 2's compliment (negate and add 1 to subtract)
+            add  REG1, REG2 # ADD <value of REG1>
         # At this point, the zero flag is set to 0 if they're equal.
-        jz REG3 # Jump if equal.
+        movz PC, REG3 # Jump if equal.
 
 ### Booting
 
